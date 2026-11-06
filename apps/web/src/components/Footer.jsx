@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, ShieldCheck, Heart, MapPin, Phone, Mail, Globe, Anchor } from 'lucide-react';
+import { Flame, ShieldCheck, Heart, MapPin, Phone, Mail, Globe, Anchor, Youtube } from 'lucide-react';
 
 export function Footer({ onOpenLogistics, onSelectDestination }) {
   return (
@@ -91,6 +91,15 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               Island Routes & Support
             </h4>
             <ul className="space-y-2 text-xs text-sand-300">
+              <li>
+                <a
+                  href="#travel-vlogs"
+                  className="hover:text-campfire transition-colors flex items-center gap-1.5 text-white font-medium"
+                >
+                  <Youtube className="w-3.5 h-3.5 text-red-500" />
+                  <span>বাস্তব ভ্রমণ ভিডিও ভ্লগ (Watch Vlogs)</span>
+                </a>
+              </li>
               <li>
                 <button
                   onClick={onOpenLogistics}

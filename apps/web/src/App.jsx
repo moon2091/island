@@ -6,6 +6,7 @@ import { CampsiteCard } from './components/CampsiteCard';
 import { CampsiteDetail } from './components/CampsiteDetail';
 import { BookingModal } from './components/BookingModal';
 import { LogisticsGuide } from './components/LogisticsGuide';
+import { FeaturedVideos } from './components/FeaturedVideos';
 import { Footer } from './components/Footer';
 import { fetchCampsites, fetchDestinations } from './api/client';
 import { Sparkles, MapPin, Compass, Flame, Filter, Heart } from 'lucide-react';
@@ -293,6 +294,11 @@ export function App() {
                 </div>
               )}
             </section>
+
+            {/* Featured Travel Experiences & Video Vlogs Section */}
+            <div id="travel-vlogs">
+              <FeaturedVideos />
+            </div>
           </div>
         )}
       </main>

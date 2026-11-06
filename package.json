@@ -17,6 +17,10 @@
   "workspaces": [
     "apps/*"
   ],
+  "overrides": {
+    "vite": "^6.4.5",
+    "esbuild": "^0.28.2"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   }

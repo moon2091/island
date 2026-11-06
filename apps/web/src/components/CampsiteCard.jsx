@@ -77,13 +77,15 @@ export function CampsiteCard({
           <>
             <button
               onClick={handlePrevImg}
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/85 text-stone-800 hover:bg-white shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Previous Photo"
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/90 text-stone-800 hover:bg-white shadow-md opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNextImg}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/85 text-stone-800 hover:bg-white shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Next Photo"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/90 text-stone-800 hover:bg-white shadow-md opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

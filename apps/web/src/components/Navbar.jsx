@@ -42,11 +42,11 @@ export function Navbar({
                 <Flame className="w-5 h-5 sm:w-6 sm:h-6 fill-campfire" />
               </div>
               <div className="flex flex-col shrink-0 justify-center">
-                <div className="font-extrabold text-lg sm:text-xl tracking-tight text-nature-950 flex items-center gap-1.5 whitespace-nowrap leading-none">
+                <div className="font-extrabold text-base sm:text-xl tracking-tight text-nature-950 flex items-center gap-1 sm:gap-1.5 whitespace-nowrap leading-none">
                   <span>Island Camping</span>
                   <span className="text-campfire font-black">BD</span>
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-bold text-stone-500 tracking-wider uppercase mt-1 whitespace-nowrap leading-none">
+                <span className="text-[9px] sm:text-[11px] font-bold text-stone-500 tracking-wider uppercase mt-1 whitespace-nowrap leading-none">
                   Eco Adventure & Glamping
                 </span>
               </div>

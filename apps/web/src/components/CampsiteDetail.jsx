@@ -178,18 +178,18 @@ export function CampsiteDetail({
             {campsite.title}
           </h1>
 
-          <div className="flex items-center gap-4 mt-2 text-xs sm:text-sm text-stone-600">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-2 text-xs sm:text-sm text-stone-600">
             <div className="flex items-center gap-1 font-bold text-stone-900">
-              <Star className="w-4 h-4 fill-campfire-amber text-campfire-amber" />
+              <Star className="w-4 h-4 fill-campfire-amber text-campfire-amber shrink-0" />
               <span>{campsite.rating || 4.9}</span>
               <span className="text-stone-500 font-normal">
-                ({campsite.review_count || 56} verified camper reviews)
+                ({campsite.review_count || 56} reviews)
               </span>
             </div>
-            <span>&bull;</span>
-            <span className="flex items-center gap-1">
-              <Anchor className="w-4 h-4 text-stone-500" />
-              <span>{campsite.ghat_info}</span>
+            <span className="hidden sm:inline">&bull;</span>
+            <span className="flex items-center gap-1 text-stone-700">
+              <Anchor className="w-4 h-4 text-stone-500 shrink-0" />
+              <span className="break-words">{campsite.ghat_info}</span>
             </span>
           </div>
         </div>
@@ -206,6 +206,11 @@ export function CampsiteDetail({
               alt={campsite.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            {/* Mobile Photo Count Button */}
+            <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-md md:hidden">
+              <Eye className="w-3.5 h-3.5" />
+              <span>Show all {images.length} photos</span>
+            </div>
           </div>
 
           {/* Right 4 smaller images */}

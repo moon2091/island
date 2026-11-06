@@ -89,7 +89,7 @@ export function BookingModal({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-sand-50 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-sand-300 relative my-8 animate-in fade-in zoom-in-95 duration-200">
+      <div className="bg-sand-50 rounded-2xl sm:rounded-3xl max-w-xl w-full p-4 sm:p-8 shadow-2xl border border-sand-300 relative my-6 sm:my-8 animate-in fade-in zoom-in-95 duration-200">
         
         {/* Close Button */}
         <button
@@ -142,7 +142,7 @@ export function BookingModal({
                   placeholder="e.g. Shakib Al Hasan"
                   value={guestName}
                   onChange={(e) => setGuestName(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
+                  className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-base sm:text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
                 />
               </div>
 
@@ -157,7 +157,7 @@ export function BookingModal({
                     placeholder="+8801700000000"
                     value={guestPhone}
                     onChange={(e) => setGuestPhone(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
+                    className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-base sm:text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -170,7 +170,7 @@ export function BookingModal({
                     placeholder="shakib@example.com"
                     value={guestEmail}
                     onChange={(e) => setGuestEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
+                    className="w-full px-4 py-2.5 bg-white border border-sand-300 rounded-xl text-base sm:text-sm font-semibold focus:ring-2 focus:ring-nature-800 focus:outline-none"
                   />
                 </div>
               </div>

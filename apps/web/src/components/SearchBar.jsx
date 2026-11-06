@@ -199,7 +199,7 @@ export function SearchBar({
                 min={new Date().toISOString().split('T')[0]}
                 value={checkInDate || ''}
                 onChange={(e) => onCheckInChange(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none"
+                className="w-full px-3 py-2 text-base sm:text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none bg-white"
               />
             </div>
             <div>
@@ -211,7 +211,7 @@ export function SearchBar({
                 min={checkInDate || new Date().toISOString().split('T')[0]}
                 value={checkOutDate || ''}
                 onChange={(e) => onCheckOutChange(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none"
+                className="w-full px-3 py-2 text-base sm:text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none bg-white"
               />
             </div>
             <button

@@ -167,7 +167,7 @@ export function App() {
                   <span>The Hipcamp of Bangladesh Islands</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-nature-950 tracking-tight max-w-4xl mx-auto leading-[1.15]">
+                <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-nature-950 tracking-tight max-w-4xl mx-auto leading-[1.2] sm:leading-[1.15]">
                   Pitch Your Tent Under the Stars on Char Hare & Southern Islands
                 </h1>
 

@@ -240,7 +240,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
             <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh. Char Hare & Southern Islands Eco-Tourism.</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-6">
             <a
               href="https://www.facebook.com/islandcampingbangladesh"
               target="_blank"

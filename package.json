@@ -1,0 +1,23 @@
+{
+  "name": "island-camping-bangladesh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hipcamp-inspired fullstack adventure and eco-camping web application for Bangladesh islands",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "setup": "npm install && npm run setup:backend",
+    "setup:backend": "cd backend && python3 -m venv venv && ./venv/bin/pip install -r requirements.txt",
+    "dev": "npm run dev --prefix apps/web",
+    "dev:backend": "cd backend && ./venv/bin/uvicorn main:app --reload --port 8000",
+    "build": "npm run build --prefix apps/web && mkdir -p dist/apps/web && cp -R apps/web/dist/. dist/apps/web/",
+    "start": "npm run preview --prefix apps/web"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

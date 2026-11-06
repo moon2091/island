@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#1B4332"/>
+  <!-- Waves -->
+  <path d="M12 46C18 44 22 48 28 46C34 44 38 48 44 46C50 44 54 46 54 46" stroke="#52B788" stroke-width="3" stroke-linecap="round"/>
+  <path d="M10 52C16 50 20 54 26 52C32 50 36 54 42 52C48 50 52 52 52 52" stroke="#B7E4C7" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Island Mound -->
+  <path d="M16 44C20 36 28 32 32 32C36 32 44 36 48 44Z" fill="#F4F1EA"/>
+  <!-- Campfire Tent / Flame -->
+  <path d="M32 14C34 20 38 24 38 28C38 31.31 35.31 34 32 34C28.69 34 26 31.31 26 28C26 24 30 20 32 14Z" fill="#E76F51"/>
+  <path d="M32 22C33.5 25 35 27 35 29C35 30.65 33.65 32 32 32C30.35 32 29 30.65 29 29C29 27 30.5 25 32 22Z" fill="#F59E0B"/>
+</svg>

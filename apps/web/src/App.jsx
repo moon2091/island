@@ -155,8 +155,8 @@ export function App() {
           <div>
             
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-b from-sand-200/90 to-sand-100 pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-sand-300 overflow-hidden">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="relative z-30 bg-gradient-to-b from-sand-200/90 to-sand-100 pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-sand-300">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                 
                 {/* Pill Tag */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nature-100 border border-nature-200 text-nature-900 text-xs font-extrabold uppercase tracking-wider mb-5">
@@ -189,8 +189,10 @@ export function App() {
                 </div>
               </div>
 
-              {/* Decorative Subtle Background Circles */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-100/30 blur-3xl pointer-events-none rounded-full" />
+              {/* Decorative Subtle Background Circles (isolated overflow-hidden so search popover is never clipped) */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-100/30 blur-3xl rounded-full" />
+              </div>
             </div>
 
             {/* Category Filter Pills Bar */}

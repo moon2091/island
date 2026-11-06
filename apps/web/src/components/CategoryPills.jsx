@@ -14,7 +14,7 @@ const ICON_MAP = {
 
 export function CategoryPills({ selectedCategory, onSelectCategory }) {
   return (
-    <div className="border-b border-sand-300 bg-sand-50/70 py-4">
+    <div className="relative z-10 border-b border-sand-300 bg-sand-50/70 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth py-1">
           {CATEGORIES.map((cat) => {

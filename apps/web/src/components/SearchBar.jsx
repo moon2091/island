@@ -38,7 +38,7 @@ export function SearchBar({
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 relative z-30" ref={barRef}>
+    <div className="w-full max-w-4xl mx-auto px-4 relative z-40" ref={barRef}>
       {/* Outer Segmented Container */}
       <div className="bg-white rounded-2xl md:rounded-full p-2 md:p-2.5 shadow-float border border-stone-200/90 flex flex-col md:flex-row items-stretch md:items-center divide-y md:divide-y-0 md:divide-x divide-stone-200">
         
@@ -124,7 +124,7 @@ export function SearchBar({
       {/* Popovers */}
       {/* 1. Destination Popover */}
       {activeSegment === 'where' && (
-        <div className="absolute left-4 right-4 md:left-4 md:w-96 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-40 animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute left-4 right-4 md:left-4 md:w-96 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
           <div className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3">
             Popular Island Destinations
           </div>
@@ -172,9 +172,22 @@ export function SearchBar({
 
       {/* 2. Dates Popover */}
       {activeSegment === 'dates' && (
-        <div className="absolute left-4 right-4 md:left-1/4 md:w-80 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-40 animate-in fade-in zoom-in-95 duration-150">
-          <div className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3">
-            Select Camping Dates
+        <div className="absolute left-4 right-4 md:left-1/3 md:-translate-x-12 md:w-84 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs font-bold text-stone-400 uppercase tracking-wider">
+              Select Camping Dates
+            </span>
+            {(checkInDate || checkOutDate) && (
+              <button
+                onClick={() => {
+                  onCheckInChange('');
+                  onCheckOutChange('');
+                }}
+                className="text-[11px] font-bold text-campfire hover:text-campfire-hover transition-colors"
+              >
+                Reset Dates
+              </button>
+            )}
           </div>
           <div className="space-y-3">
             <div>
@@ -183,6 +196,7 @@ export function SearchBar({
               </label>
               <input
                 type="date"
+                min={new Date().toISOString().split('T')[0]}
                 value={checkInDate || ''}
                 onChange={(e) => onCheckInChange(e.target.value)}
                 className="w-full px-3 py-2 text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none"
@@ -194,6 +208,7 @@ export function SearchBar({
               </label>
               <input
                 type="date"
+                min={checkInDate || new Date().toISOString().split('T')[0]}
                 value={checkOutDate || ''}
                 onChange={(e) => onCheckOutChange(e.target.value)}
                 className="w-full px-3 py-2 text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-nature-800 focus:outline-none"
@@ -201,7 +216,7 @@ export function SearchBar({
             </div>
             <button
               onClick={() => setActiveSegment('guests')}
-              className="w-full py-2 bg-nature-900 text-white rounded-xl text-xs font-bold hover:bg-nature-800 transition-colors mt-2"
+              className="w-full py-2.5 bg-nature-900 text-white rounded-xl text-xs font-bold hover:bg-nature-800 transition-colors mt-2"
             >
               Continue to Guests
             </button>
@@ -211,7 +226,7 @@ export function SearchBar({
 
       {/* 3. Guests Popover */}
       {activeSegment === 'guests' && (
-        <div className="absolute left-4 right-4 md:right-4 md:left-auto md:w-80 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-40 animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute left-4 right-4 md:right-4 md:left-auto md:w-80 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
           <div className="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3">
             Number of Campers
           </div>

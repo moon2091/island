@@ -9,7 +9,7 @@ export const TRAVEL_ARTICLES = [
     category: "National News & Travel Feature",
     url: "https://www.ittefaq.com.bd/721460/%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%AF%E0%A6%9F%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%9B%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%9C%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%97%E0%A6%BE-%E0%A6%9A%E0%A6%B0-%E0%A6%B9%E0%A7%87%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B0-%E0%A6%93-%E0%A6%B8%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%B0%E0%A6%9A%E0%A6%B0",
     badge: "ইত্তেফাক বিশেষ প্রতিবেদন",
-    image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/char-heyar-red-crabs.jpg",
     excerpt: "পটুয়াখালীর রাঙ্গাবালী উপজেলার দক্ষিণ প্রান্তের দুই নয়নাভিরাম দ্বীপ 'চর হেয়ার' ও 'সোনারচর' এখন ভ্রমণপিপাসুদের পছন্দের শীর্ষে। নির্জন সৈকত, লাল কাঁকড়ার মেলা এবং ঝাউবনের রূপ দেখতে দূর-দূরান্ত থেকে আসছেন পর্যটকরা।",
     content: `পটুয়াখালীর সর্বদক্ষিণে রাঙ্গাবালী উপজেলার অন্তর্গত বঙ্গোপসাগরের কোলঘেঁষে জেগে ওঠা দুই নয়নাভিরাম ভূখণ্ড 'চর হেয়ার' ও 'সোনারচর'। প্রাকৃতিক রূপবৈচিত্র্য, বিস্তীর্ণ বালিয়াড়ি, লাল কাঁকড়ার অবাধ বিচরণ এবং ঝাউবনের নিবিড় ছায়ায় এই দ্বীপগুলো পর্যটকদের অন্যতম আকর্ষণীয় গন্তব্যে পরিণত হয়েছে।
 
@@ -25,7 +25,7 @@ export const TRAVEL_ARTICLES = [
     category: "Tourism Potential",
     url: "https://www.dailyjanakantha.com/bangladesh/news/813828",
     badge: "জনকণ্ঠ রিপোর্ট",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/char-heyar-watchtower.jpg",
     excerpt: "দক্ষিণাঞ্চলের পর্যটন সম্ভাবনায় নতুন দিগন্ত উন্মোচন করেছে চর হেয়ার। বঙ্গোপসাগরের উত্তাল ঢেউ ও ম্যানগ্রোভ বনের মায়াবী আহ্বানে প্রতিদিন শত শত পর্যটক রাঙ্গাবালীর জলপথ পাড়ি দিচ্ছেন।",
     content: `পটুয়াখালী জেলার রাঙ্গাবালী উপজেলার জলসীমায় অবস্থিত 'চর হেয়ার' এক অনন্য প্রাকৃতিক সৃষ্টি। মূল ভূখণ্ড থেকে বিচ্ছিন্ন এই বালুচরটি যেন প্রকৃতির আপন হাতে সাজানো বাগান।
 
@@ -41,7 +41,7 @@ export const TRAVEL_ARTICLES = [
     category: "Investigative Travel",
     url: "https://www.dailyjanakantha.com/bangladesh/news/670667",
     badge: "জনকণ্ঠ এক্সক্লুসিভ",
-    image: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/char-heyar-sandbar.jpg",
     excerpt: "কুয়াকাটার বাইরে দক্ষিণাঞ্চলে এমন নির্জন বালিয়াড়ি ও লাল কাঁকড়ার নিরাপদ আশ্রয় আর কোথাও নেই। চর হেয়ারের পর্যটন বিকাশে নজর দিচ্ছেন ভ্রমণ উদ্যোক্তারা।",
     content: `সাগরকন্যা কুয়াকাটা অতিক্রম করে আরও দক্ষিণে বঙ্গোপসাগরের মোহনায় জেগে ওঠা চর হেয়ারের নৈসর্গিক রূপ পর্যটকদের বিস্ময় জাগায়। 
 
@@ -57,7 +57,7 @@ export const TRAVEL_ARTICLES = [
     category: "Complete Travel Guide",
     url: "https://www.ajkerpatrika.com/lifestyle/travaling/ajpje5tndjrpu",
     badge: "আজকের পত্রিকা গাইড",
-    image: "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/manta-community-boats.jpg",
     excerpt: "লাল কাঁকড়ার লাল গালিচায় হাঁটতে চান? নির্জন দ্বীপে তাবুর ভেতর থেকে সাগরের গর্জন শুনতে চান? তবে আপনার পরবর্তী গন্তব্য হোক পটুয়াখালীর চর হেয়ার। যাতায়াত ও ক্যাম্পিংয়ের পূর্ণাঙ্গ গাইড।",
     content: `আজকের পত্রিকার ভ্রমণ কলামে বিশদভাবে তুলে ধরা হয়েছে কীভাবে ঢাকা থেকে খুব অল্প খরচে চর হেয়ারে পৌঁছানো যায়।
 
@@ -73,7 +73,7 @@ export const TRAVEL_ARTICLES = [
     category: "Destination Handbook",
     url: "https://vromonguide.com/place/char-hare-patuakhali",
     badge: "ভ্রমণ গাইড ভেরিফাইড",
-    image: "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/char-heyar-tents.jpg",
     excerpt: "কীভাবে যাবেন, কোথায় থাকবেন, কী খাবেন ও কত খরচ হবে—চর হেয়ারের আদ্যোপান্ত তথ্যসমৃদ্ধ ভ্রমণ গাইড। ক্যাম্পিং সরঞ্জাম ও স্থানীয় বোট ভাড়ার সম্পূর্ণ চেকলিস্ট।",
     content: `বাংলাদেশের বিশ্বস্ত ট্রাভেল পোর্টাল 'ভ্রমণ গাইড'-এর চর হেয়ার গাইডলাইনে রয়েছে পর্যটকদের জন্য অত্যন্ত প্রয়োজনীয় কিছু ব্যবহারিক তথ্য:
 

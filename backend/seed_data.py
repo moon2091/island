@@ -3,12 +3,12 @@ from models import Destination, Campsite
 
 DESTINATIONS_DATA = [
     {
-        "name": "Char Hare",
+        "name": "Char Heyar",
         "district": "Patuakhali (Rangabali)",
         "ghat_name": "Char Montaz Ghat / Koralia Launch Ghat",
-        "boat_schedule": "Daily launch from Dhaka (Sadarghat) to Char Montaz departing 5:30 PM. From Char Montaz, 45-60 mins local engine trawler / speedboat to Char Hare sandbar.",
+        "boat_schedule": "Daily launch from Dhaka (Sadarghat) to Char Montaz departing 5:30 PM. From Char Montaz, 45-60 mins local engine trawler / speedboat to Char Heyar sandbar.",
         "map_coordinates": "21.8542, 90.5218",
-        "banner_image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80"
+        "banner_image": "/images/char-heyar-sandbar.jpg"
     },
     {
         "name": "Shonar Char",
@@ -16,7 +16,7 @@ DESTINATIONS_DATA = [
         "ghat_name": "Galachipa / Char Montaz Ghat",
         "boat_schedule": "Connecting trawlers leave Char Montaz at 8:00 AM and 1:00 PM. Reserve speedboats can reach Shonar Char in 40 mins.",
         "map_coordinates": "21.8025, 90.4789",
-        "banner_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+        "banner_image": "/images/shonar-char-sunset.jpg"
     },
     {
         "name": "Jahaj Mara",
@@ -24,7 +24,7 @@ DESTINATIONS_DATA = [
         "ghat_name": "Jahaj Mara Canal Ghat",
         "boat_schedule": "Country boats and trawlers depart Galachipa or Kuakata Gangamati canal daily through sheltered estuary waterways.",
         "map_coordinates": "21.8211, 90.3842",
-        "banner_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+        "banner_image": "/images/jahaj-mara-estuary.jpg"
     },
     {
         "name": "Char Montaz",
@@ -32,24 +32,24 @@ DESTINATIONS_DATA = [
         "ghat_name": "Char Montaz Central Launch Ghat",
         "boat_schedule": "Direct Dhaka-Char Montaz launch arrives every morning at 7:30 AM. Ancestral water habitat of the indigenous Manta Community.",
         "map_coordinates": "21.9214, 90.5486",
-        "banner_image": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80"
+        "banner_image": "/images/manta-community-boats.jpg"
     },
     {
         "name": "Kuakata",
         "district": "Patuakhali",
         "ghat_name": "Gangamati & Kawar Char Estuary Ghat",
-        "boat_schedule": "Direct highway connection from Dhaka (6-7 hrs). Marine speedboats and trawlers to Char Hare depart Gangamati Point.",
+        "boat_schedule": "Direct highway connection from Dhaka (6-7 hrs). Marine speedboats and trawlers to Char Heyar depart Gangamati Point.",
         "map_coordinates": "21.8167, 90.1167",
-        "banner_image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+        "banner_image": "/images/kuakata-gangchil-beach.jpg"
     }
 ]
 
 CAMPSITES_DATA = [
     {
-        "title": "Camp De Char Hare - Watchtower & Beach Camp",
-        "slug": "camp-de-char-hare",
-        "destination_name": "Char Hare",
-        "category": "Char Hare Camps",
+        "title": "Camp De Char Heyar - Watchtower & Beach Camp",
+        "slug": "camp-de-char-heyar",
+        "destination_name": "Char Heyar",
+        "category": "Char Heyar Camps",
         "price_per_night": 1500,
         "capacity": 4,
         "description": "নীরবে নিভৃতে তাবুতে থেকে বঙ্গোপসাগরের উত্তাল সমুদ্র, অনন্ত বালিয়াড়ি, কোটি লাল কাঁকড়া, এবং ঝাউগাছের অকৃত্তিম সৌন্দর্য অবলোকনের জন্য চর হেয়ারের একমাত্র সুসজ্জিত আউটডোর ক্যাম্প সাইট। দ্বীপের একমাত্র কাঠের ওয়াচ টাওয়ার থেকে পুরো সমুদ্র ও সৈকত অবলোকন সম্ভব। রয়েছে নিজস্ব কিচেন, ৩টি পরিষ্কার ওয়াশরুম, ২টি মিষ্টি পানির টিউবওয়েল, এবং রাতে নিরাপত্তার জন্য সার্বক্ষণিক নাইট গার্ড।",
@@ -69,19 +69,19 @@ CAMPSITES_DATA = [
             "Campfire & Acoustic Bonfire Area"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+            "/images/char-heyar-watchtower.jpg",
+            "/images/char-heyar-red-crabs.jpg",
+            "/images/char-heyar-tents.jpg",
+            "/images/char-heyar-campfire.jpg",
+            "/images/seafood-bbq.jpg"
         ],
         "rating": 4.95,
         "review_count": 56,
         "instant_book": True,
         "host_name": "Camp Master Shumon & Island Crew",
         "host_phone": "+8801819000101",
-        "host_badge": "Verified Char Hare Island Guardian",
-        "ghat_info": "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / speedboat to Char Hare sandbar"
+        "host_badge": "Verified Char Heyar Island Guardian",
+        "ghat_info": "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / speedboat to Char Heyar sandbar"
     },
     {
         "title": "Manta Community Boat & Canal Living Experience",
@@ -102,11 +102,11 @@ CAMPSITES_DATA = [
             "Clean Village Washroom Access"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80"
+            "/images/manta-community-boats.jpg",
+            "/images/manta-fishing.jpg",
+            "/images/manta-boat-life.jpg",
+            "/images/char-montaz-village.jpg",
+            "/images/char-montaz-homestay.jpg"
         ],
         "rating": 4.9,
         "review_count": 42,
@@ -134,11 +134,11 @@ CAMPSITES_DATA = [
             "First Aid & Emergency Radio"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80"
+            "/images/shonar-char-mangrove.jpg",
+            "/images/shonar-char-deer.jpg",
+            "/images/shonar-char-sunset.jpg",
+            "/images/char-heyar-tents.jpg",
+            "/images/seafood-bbq.jpg"
         ],
         "rating": 4.88,
         "review_count": 34,
@@ -166,11 +166,11 @@ CAMPSITES_DATA = [
             "24/7 Electricity via Solar & Battery"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+            "/images/char-montaz-homestay.jpg",
+            "/images/char-montaz-village.jpg",
+            "/images/manta-community-boats.jpg",
+            "/images/manta-fishing.jpg",
+            "/images/shonar-char-sunset.jpg"
         ],
         "rating": 4.92,
         "review_count": 28,
@@ -197,11 +197,11 @@ CAMPSITES_DATA = [
             "Solar Torch & Camping Lights"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+            "/images/jahaj-mara-estuary.jpg",
+            "/images/jahaj-mara-pines.jpg",
+            "/images/char-heyar-campfire.jpg",
+            "/images/char-heyar-tents.jpg",
+            "/images/shonar-char-sunset.jpg"
         ],
         "rating": 4.82,
         "review_count": 22,
@@ -225,14 +225,14 @@ CAMPSITES_DATA = [
             "Private Ensuite Sanitary Washroom",
             "Direct Oceanfront Sunrise & Sunset View",
             "220V Solar Inverter Electricity",
-            "High-Speed Boat Charter Desk for Char Hare"
+            "High-Speed Boat Charter Desk for Char Heyar"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+            "/images/kuakata-glamping-tents.jpg",
+            "/images/kuakata-gangchil-beach.jpg",
+            "/images/char-heyar-sandbar.jpg",
+            "/images/seafood-bbq.jpg",
+            "/images/shonar-char-sunset.jpg"
         ],
         "rating": 4.94,
         "review_count": 48,
@@ -287,7 +287,7 @@ def seed_database():
                 db.add(campsite)
 
         db.commit()
-        print("Successfully re-seeded database with Char Hare, Shonar Char, Jahaj Mara, Char Montaz & Manta Community camps.")
+        print("Successfully re-seeded database with Char Heyar, Shonar Char, Jahaj Mara, Char Montaz & Manta Community camps.")
     except Exception as e:
         db.rollback()
         print(f"Error seeding database: {e}")

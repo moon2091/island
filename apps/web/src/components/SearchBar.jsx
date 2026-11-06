@@ -172,7 +172,7 @@ export function SearchBar({
 
       {/* 2. Dates Popover */}
       {activeSegment === 'dates' && (
-        <div className="absolute left-4 right-4 md:left-1/3 md:-translate-x-12 md:w-84 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute left-4 right-4 md:left-1/3 md:-translate-x-12 md:w-80 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-stone-200 p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-stone-400 uppercase tracking-wider">
               Select Camping Dates

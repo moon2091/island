@@ -1,12 +1,12 @@
 export const DESTINATIONS = [
   {
     id: 1,
-    name: "Char Hare",
+    name: "Char Heyar",
     bn_name: "চর হেয়ার",
     district: "Patuakhali (Rangabali)",
     ghat_name: "Char Montaz Ghat / Koralia Launch Ghat",
-    boat_schedule: "Daily launch from Dhaka (Sadarghat) to Char Montaz / Galachipa departing 5:30 PM. From Char Montaz, local engine trawler / speedboat to Char Hare (approx 45-60 mins crossing through calm estuary).",
-    banner_image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+    boat_schedule: "Daily launch from Dhaka (Sadarghat) to Char Montaz / Galachipa departing 5:30 PM. From Char Montaz, local engine trawler / speedboat to Char Heyar (approx 45-60 mins crossing through calm estuary).",
+    banner_image: "/images/char-heyar-sandbar.jpg",
     description: "The crown jewel of southern sandbar islands in the Bay of Bengal. Known for millions of red crabs, virgin jhau forest, wooden watchtower, and the nomadic Manta fishing community."
   },
   {
@@ -16,7 +16,7 @@ export const DESTINATIONS = [
     district: "Patuakhali (Rangabali)",
     ghat_name: "Galachipa / Char Montaz Ghat",
     boat_schedule: "Connecting trawlers leave Char Montaz at 8:00 AM and 1:00 PM. Reserve speedboats can reach Shonar Char in 40 mins from Kuakata or Char Montaz.",
-    banner_image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    banner_image: "/images/shonar-char-sunset.jpg",
     description: "The 'Golden Island' blessed with vast Sundarbans-like mangrove forests, herds of wild spotted deer, and endless golden sandbars where both sunrise and sunset paint the sea."
   },
   {
@@ -26,7 +26,7 @@ export const DESTINATIONS = [
     district: "Patuakhali (Rangabali)",
     ghat_name: "Jahaj Mara Canal Ghat",
     boat_schedule: "Country boats and trawlers depart Galachipa or Kuakata Gangamati canal daily. Accessible by scenic boat cruise through sheltered coastal waterways.",
-    banner_image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    banner_image: "/images/jahaj-mara-estuary.jpg",
     description: "Untouched and quiet island retreat with rolling grassy dykes, pine tree groves, calm tidal waters, and total solitude away from any tourist crowd."
   },
   {
@@ -36,7 +36,7 @@ export const DESTINATIONS = [
     district: "Patuakhali (Rangabali)",
     ghat_name: "Char Montaz Central Launch Ghat",
     boat_schedule: "Direct Dhaka-Char Montaz launch (MV Pubali / MV Sundarban fleet) arrives every morning at 7:30 AM. Internal wooden boats available at all hours.",
-    banner_image: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
+    banner_image: "/images/manta-community-boats.jpg",
     description: "The vibrant gateway island and ancestral home of the indigenous water-dwelling Manta Community (মান্তা যাযাবর সম্প্রদায়). Featuring peaceful island village homestays."
   },
   {
@@ -45,15 +45,15 @@ export const DESTINATIONS = [
     bn_name: "কুয়াকাটা",
     district: "Patuakhali",
     ghat_name: "Gangamati & Kawar Char Estuary Ghat",
-    boat_schedule: "Direct highway bus connection from Dhaka via Padma & Payra bridges (approx 6-7 hrs). Marine speedboats and trawlers to Char Hare, Shonar Char depart Gangamati.",
-    banner_image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    boat_schedule: "Direct highway bus connection from Dhaka via Padma & Payra bridges (approx 6-7 hrs). Marine speedboats and trawlers to Char Heyar, Shonar Char depart Gangamati.",
+    banner_image: "/images/kuakata-gangchil-beach.jpg",
     description: "The panoramic launchpad where sunrise and sunset embrace the Bay of Bengal, offering luxury coastal safari glamping and quick boat charters to the outer chars."
   }
 ];
 
 export const CATEGORIES = [
   { id: "all", name: "All Camps", icon: "Compass" },
-  { id: "char_hare", name: "Char Hare Camps", icon: "Waves" },
+  { id: "char_heyar", name: "Char Heyar Camps", icon: "Waves" },
   { id: "manta", name: "Manta Community Life", icon: "Sailboat" },
   { id: "mangrove", name: "Mangrove & Wilderness", icon: "Trees" },
   { id: "homestay", name: "Village Homestays", icon: "Tent" },
@@ -63,18 +63,18 @@ export const CATEGORIES = [
 export const SEED_CAMPSITES = [
   {
     id: 1,
-    title: "Camp De Char Hare - Watchtower & Beach Camp",
+    title: "Camp De Char Heyar - Watchtower & Beach Camp",
     bn_title: "ক্যাম্প দে চর হেয়ার - ওয়াচ টাওয়ার ও বিচ ক্যাম্প",
-    slug: "camp-de-char-hare",
+    slug: "camp-de-char-heyar",
     destination_id: 1,
     destination: {
       id: 1,
-      name: "Char Hare",
+      name: "Char Heyar",
       bn_name: "চর হেয়ার",
       district: "Patuakhali (Rangabali)",
       ghat_name: "Char Montaz Ghat / Koralia Launch Ghat"
     },
-    category: "Char Hare Camps",
+    category: "Char Heyar Camps",
     price_per_night: 1500,
     special_package_price: 2000,
     capacity: 4,
@@ -105,20 +105,20 @@ export const SEED_CAMPSITES = [
       "Zero Crowd - Private Beach Feel"
     ],
     images: [
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "/images/char-heyar-watchtower.jpg",
+      "/images/char-heyar-red-crabs.jpg",
+      "/images/char-heyar-tents.jpg",
+      "/images/char-heyar-campfire.jpg",
+      "/images/seafood-bbq.jpg"
     ],
     rating: 4.95,
     review_count: 56,
     instant_book: true,
     host_name: "Camp Master Shumon & Island Crew",
     host_phone: "+8801819000101",
-    host_badge: "Verified Char Hare Island Guardian",
-    ghat_info: "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / reserve speedboat drop-off directly at Char Hare sandbar",
-    boat_schedule: "Dhaka Sadarghat launch to Char Montaz leaves 5:30 PM daily. Trawlers to Char Hare wait for launch passengers at Char Montaz ghat.",
+    host_badge: "Verified Char Heyar Island Guardian",
+    ghat_info: "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / reserve speedboat drop-off directly at Char Heyar sandbar",
+    boat_schedule: "Dhaka Sadarghat launch to Char Montaz leaves 5:30 PM daily. Trawlers to Char Heyar wait for launch passengers at Char Montaz ghat.",
     rules: [
       "এটি একটি নির্জন দ্বীপ, বাজার-হাট নেই—অনেক সময়ই প্রাকৃতিক কারণে মেন্যু সামান্য পরিবর্তিত হতে পারে।",
       "দ্বীপে কোনো প্রকার প্লাস্টিক বা আবর্জনা ফেলা সম্পূর্ণ নিষিদ্ধ (Leave No Trace)।",
@@ -162,11 +162,11 @@ export const SEED_CAMPSITES = [
       "Clean Village Washroom Access on Canal Bank"
     ],
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80"
+      "/images/manta-community-boats.jpg",
+      "/images/manta-fishing.jpg",
+      "/images/manta-boat-life.jpg",
+      "/images/char-montaz-village.jpg",
+      "/images/char-montaz-homestay.jpg"
     ],
     rating: 4.9,
     review_count: 42,
@@ -219,11 +219,11 @@ export const SEED_CAMPSITES = [
       "Local Forest Scout & Guide"
     ],
     images: [
-      "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80"
+      "/images/shonar-char-mangrove.jpg",
+      "/images/shonar-char-deer.jpg",
+      "/images/shonar-char-sunset.jpg",
+      "/images/char-heyar-tents.jpg",
+      "/images/seafood-bbq.jpg"
     ],
     rating: 4.88,
     review_count: 34,
@@ -276,11 +276,11 @@ export const SEED_CAMPSITES = [
       "Local Island Family Host"
     ],
     images: [
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "/images/char-montaz-homestay.jpg",
+      "/images/char-montaz-village.jpg",
+      "/images/manta-community-boats.jpg",
+      "/images/manta-fishing.jpg",
+      "/images/shonar-char-sunset.jpg"
     ],
     rating: 4.92,
     review_count: 28,
@@ -331,11 +331,11 @@ export const SEED_CAMPSITES = [
       "Beach Chairs & Hammocks"
     ],
     images: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "/images/jahaj-mara-estuary.jpg",
+      "/images/jahaj-mara-pines.jpg",
+      "/images/char-heyar-campfire.jpg",
+      "/images/char-heyar-tents.jpg",
+      "/images/shonar-char-sunset.jpg"
     ],
     rating: 4.82,
     review_count: 22,
@@ -382,15 +382,15 @@ export const SEED_CAMPSITES = [
       "Private Ensuite Sanitary Washroom",
       "Direct Oceanfront Sunrise & Sunset View",
       "220V Solar Inverter Electricity",
-      "High-Speed Boat Charter Desk for Char Hare",
+      "High-Speed Boat Charter Desk for Char Heyar",
       "Beach Loungers & Private Deck"
     ],
     images: [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "/images/kuakata-glamping-tents.jpg",
+      "/images/kuakata-gangchil-beach.jpg",
+      "/images/char-heyar-sandbar.jpg",
+      "/images/seafood-bbq.jpg",
+      "/images/shonar-char-sunset.jpg"
     ],
     rating: 4.94,
     review_count: 48,
@@ -399,7 +399,7 @@ export const SEED_CAMPSITES = [
     host_phone: "+8801733000606",
     host_badge: "Coastal Glamping Specialist",
     ghat_info: "Gangamati Beach Point, 15 mins motorcycle/buggy ride from Kuakata Zero Point",
-    boat_schedule: "Speedboat charters to Char Hare and Shonar Char available every morning from Gangamati.",
+    boat_schedule: "Speedboat charters to Char Heyar and Shonar Char available every morning from Gangamati.",
     rules: [
       "তাবুর ভেতর ধূমপান নিষেধ।",
       "সৈকত পরিস্কার রাখার নিয়মাবলি মেনে চলতে হবে।"

@@ -139,9 +139,8 @@ export function CampsiteCard({
             <span className="px-2 py-0.5 rounded bg-sand-200 text-stone-700 font-medium">
               {campsite.category}
             </span>
-            <span className="flex items-center gap-1">
-              <Users className="w-3 h-3 text-stone-400" />
-              <span>Max {campsite.capacity} campers</span>
+            <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[11px]">
+              ৪ বেলা খাবার সহ
             </span>
           </div>
         </div>
@@ -152,7 +151,7 @@ export function CampsiteCard({
             <span className="text-lg font-extrabold text-stone-900">
               {formattedPrice}
             </span>
-            <span className="text-xs text-stone-500 font-medium"> / night</span>
+            <span className="text-xs text-stone-500 font-medium"> / person</span>
           </div>
           <span className="text-xs font-bold text-nature-800 group-hover:translate-x-0.5 transition-transform">
             View Details &rarr;

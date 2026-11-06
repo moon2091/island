@@ -69,6 +69,7 @@ export function BookingModal({
         check_out: checkOut,
         guests_count: guests,
         nights,
+        packageType: bookingPayload?.packageType || 'regular',
         add_ons: selectedAddons,
         payment_method: paymentMethod,
       });

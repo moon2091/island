@@ -169,7 +169,7 @@ export function Navbar({
               Host an Island Camp in Bangladesh
             </h3>
             <p className="text-sm text-stone-600 mb-6">
-              Do you own beachfront land or operate licensed adventure boat camps in Saint Martin, Nijhum Dwip, Sonadia, or Kaptai Lake? Join our verified network of sustainable eco-hosts.
+              Do you operate eco-camps, wooden boat stays, or island homestays in Char Hare, Shonar Char, Char Montaz, Jahaj Mara, or Kuakata? Join our verified network of sustainable island hosts.
             </p>
             <div className="space-y-4 mb-6">
               <div className="p-3.5 bg-sand-200 rounded-xl flex items-start gap-3">

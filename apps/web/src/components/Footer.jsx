@@ -20,66 +20,66 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               </span>
             </div>
             <p className="text-xs text-sand-300 leading-relaxed">
-              Bangladesh's premier outdoor discovery and eco-glamping network. Pitch your tent across Saint Martin's coral beaches, Sonadia mangroves, Nijhum Dwip deer forests, and Kaptai Lake islands.
+              চর হরে, সোনার চর, জাহাজ মারা, এবং চর মোন্তাজের মান্তা যাযাবর সম্প্রদায়ের নদী-উপকূলীয় প্রান্তরে বাংলাদেশের প্রথম খাঁটি আউটডোর অ্যাডভেঞ্চার ও ক্যাম্পিং প্ল্যাটফর্ম।
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
               <ShieldCheck className="w-4 h-4" />
-              <span>Leave No Trace &bull; Eco-Certified</span>
+              <span>Leave No Trace &bull; Red Crab & Wildlife Conservation</span>
             </div>
           </div>
 
           {/* Col 2: Destinations */}
           <div>
             <h4 className="text-xs font-extrabold text-white uppercase tracking-wider mb-4">
-              Island Campsites
+              Featured Island Camps
             </h4>
             <ul className="space-y-2 text-xs text-sand-300">
               <li>
                 <button
-                  onClick={() => onSelectDestination("Saint Martin's Island")}
-                  className="hover:text-campfire transition-colors"
+                  onClick={() => onSelectDestination("Char Hare")}
+                  className="hover:text-campfire transition-colors font-medium text-white"
                 >
-                  Saint Martin's Coral Beach
+                  ⭐ Camp De Char Hare (ক্যাম্প দে চর হরে)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectDestination("Sonadia Island")}
+                  onClick={() => onSelectDestination("Shonar Char")}
                   className="hover:text-campfire transition-colors"
                 >
-                  Sonadia Mangrove Wilderness
+                  Shonar Char Mangrove Camp (সোনার চর)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectDestination("Nijhum Dwip")}
+                  onClick={() => onSelectDestination("Char Montaz")}
                   className="hover:text-campfire transition-colors"
                 >
-                  Nijhum Dwip Deer Trail Forest
+                  Manta Community Boat Life (মান্তা সম্প্রদায়)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectDestination("Kaptai Lake Islands")}
+                  onClick={() => onSelectDestination("Char Montaz")}
                   className="hover:text-campfire transition-colors"
                 >
-                  Kaptai Lake Emerald Island
+                  Char Montaz Village Homestay (চর মোন্তাজ হোমস্টে)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectDestination("Sandwip Island")}
+                  onClick={() => onSelectDestination("Jahaj Mara")}
                   className="hover:text-campfire transition-colors"
                 >
-                  Sandwip Estuary Sunset Camp
+                  Jahaj Mara Estuary Sunset (জাহাজ মারা)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectDestination("Kuakata Gangchil Beach")}
+                  onClick={() => onSelectDestination("Kuakata")}
                   className="hover:text-campfire transition-colors"
                 >
-                  Kuakata Gangchil Glamping
+                  Kuakata Gangchil Glamping (কুয়াকাটা)
                 </button>
               </li>
             </ul>
@@ -88,40 +88,40 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
           {/* Col 3: Logistics & Safety */}
           <div>
             <h4 className="text-xs font-extrabold text-white uppercase tracking-wider mb-4">
-              Logistics & Safety
+              Island Routes & Support
             </h4>
             <ul className="space-y-2 text-xs text-sand-300">
               <li>
                 <button
                   onClick={onOpenLogistics}
-                  className="hover:text-campfire transition-colors flex items-center gap-1.5"
+                  className="hover:text-campfire transition-colors flex items-center gap-1.5 text-white font-medium"
                 >
                   <Anchor className="w-3.5 h-3.5 text-campfire" />
-                  <span>Boat Ghat Timings & Tides</span>
+                  <span>ঢাকা টু চর মোন্তাজ / চর হরে আসার উপায়</span>
                 </button>
               </li>
               <li>
-                <span className="text-stone-400">Emergency Coast Guard: 999</span>
+                <span className="text-stone-400">National Emergency: 999</span>
               </li>
               <li>
-                <span className="text-stone-400">Weather Cautionary Signals Guide</span>
+                <span className="text-stone-400">Patuakhali Coast Guard Helpline</span>
               </li>
               <li>
-                <span className="text-stone-400">Low Tide / High Tide Schedules</span>
+                <span className="text-stone-400">Red Crab Sanctuary Protection Guidelines</span>
               </li>
               <li>
-                <span className="text-stone-400">Marine Life Protection Guidelines</span>
+                <span className="text-stone-400">Manta Indigenous Culture Etiquette</span>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Newsletter & Eco Pledge */}
+          {/* Col 4: Booking Alerts & Updates */}
           <div className="space-y-3">
             <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">
-              Island Camping Alerts
+              Char Hare Camping Updates
             </h4>
             <p className="text-xs text-sand-300">
-              Receive updates on seasonal island travel permits, winter camping festivals, and meteor shower camp dates.
+              চর হরে ওয়াচ টাওয়ার বুকিং, পূর্ণিমা ক্যাম্পিং ও স্পেশাল বার্বিকিউ উইকএন্ডের আপডেট পেতে আপনার ইমেইল দিন।
             </p>
             <div className="flex gap-2">
               <input
@@ -137,7 +137,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               </button>
             </div>
             <div className="text-[11px] text-stone-400 pt-1">
-              Zero spam. Unsubscribe anytime.
+              Zero spam. Dispatched directly from Char Hare team.
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <div className="flex items-center gap-1">
-            <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh. Char Hare & Southern Islands Eco-Tourism.</span>
           </div>
 
           <div className="flex items-center gap-6">

@@ -165,11 +165,11 @@ export function App() {
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-nature-950 tracking-tight max-w-4xl mx-auto leading-[1.15]">
-                  Pitch Your Tent Under the Stars on Bangladesh's Remote Islands
+                  Pitch Your Tent Under the Stars on Char Hare & Southern Islands
                 </h1>
 
                 <p className="mt-4 text-sm sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-                  Discover beachfront dome tents, Keora forest wilderness camps, and emerald lake glamping across Saint Martin's, Sonadia, Nijhum Dwip, and Kaptai Lake.
+                  Discover beachfront dome tents with wooden watchtowers, millions of red crabs, pristine mangrove wilderness, and indigenous Manta community boat life across Char Hare, Shonar Char, Char Montaz, Jahaj Mara, and Kuakata.
                 </p>
 
                 {/* Floating Hipcamp Search Bar */}

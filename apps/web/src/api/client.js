@@ -151,14 +151,17 @@ export async function createBooking(bookingData) {
 
   let addonsTotal = 0;
   if (bookingData.add_ons) {
-    if (bookingData.add_ons.bbq) addonsTotal += 650 * (bookingData.guests_count || 1);
-    if (bookingData.add_ons.kayak) addonsTotal += 400;
-    if (bookingData.add_ons.sleeping_bag) addonsTotal += 250 * (bookingData.guests_count || 1);
+    if (bookingData.add_ons.special_meal) addonsTotal += 500 * (bookingData.guests_count || 1) * (bookingData.nights || 1);
+    if (bookingData.add_ons.manta_boat) addonsTotal += 450 * (bookingData.guests_count || 1);
+    if (bookingData.add_ons.watchtower_bonfire) addonsTotal += 300 * (bookingData.guests_count || 1);
   }
 
-  const basePrice = campsite ? campsite.price_per_night : 2500;
+  const perPerson = bookingData.packageType === 'special'
+    ? (campsite?.special_package_price || 2000)
+    : (campsite ? campsite.price_per_night : 1500);
   const nights = bookingData.nights || 1;
-  const totalBdt = (basePrice * nights) + addonsTotal;
+  const guests = bookingData.guests_count || 1;
+  const totalBdt = (perPerson * guests * nights) + addonsTotal;
 
   const mockBooking = {
     id: Date.now(),

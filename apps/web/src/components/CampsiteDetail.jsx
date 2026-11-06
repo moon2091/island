@@ -22,6 +22,11 @@ import {
   Droplets,
   LifeBuoy,
   Sparkles,
+  Utensils,
+  Music,
+  Eye,
+  AlertCircle,
+  Check,
 } from 'lucide-react';
 import { ADDONS_LIST } from '../data/seedCampsites';
 
@@ -39,12 +44,13 @@ export function CampsiteDetail({
   const [checkIn, setCheckIn] = useState(initialCheckIn || '');
   const [checkOut, setCheckOut] = useState(initialCheckOut || '');
   const [guests, setGuests] = useState(initialGuests || 2);
+  const [packageType, setPackageType] = useState('regular'); // 'regular' | 'special'
   const [selectedAddons, setSelectedAddons] = useState({
-    bbq: true,
-    kayak: false,
-    sleeping_bag: false,
+    special_meal: false,
+    manta_boat: true,
+    watchtower_bonfire: false,
   });
-  const [activeAccordion, setActiveAccordion] = useState('boats'); // 'boats' | 'tides' | 'rules'
+  const [activeAccordion, setActiveAccordion] = useState('meals'); // 'meals' | 'boats' | 'rules'
   const [lightboxImg, setLightboxImg] = useState(null);
   const [copiedLink, setCopiedLink] = useState(false);
 
@@ -63,11 +69,22 @@ export function CampsiteDetail({
   const nights = calculateNights();
 
   // Price calculations
-  const basePriceBdt = campsite.price_per_night * nights;
+  const perPersonPerNight = packageType === 'special'
+    ? (campsite.special_package_price || 2000)
+    : (campsite.price_per_night || 1500);
+
+  const basePriceBdt = perPersonPerNight * guests * nights;
+
   let addonsTotalBdt = 0;
-  if (selectedAddons.bbq) addonsTotalBdt += 650 * guests;
-  if (selectedAddons.kayak) addonsTotalBdt += 400;
-  if (selectedAddons.sleeping_bag) addonsTotalBdt += 250 * guests;
+  if (selectedAddons.special_meal && packageType !== 'special') {
+    addonsTotalBdt += 500 * guests * nights;
+  }
+  if (selectedAddons.manta_boat) {
+    addonsTotalBdt += 450 * guests;
+  }
+  if (selectedAddons.watchtower_bonfire) {
+    addonsTotalBdt += 300 * guests;
+  }
 
   const totalBdt = basePriceBdt + addonsTotalBdt;
 
@@ -96,6 +113,7 @@ export function CampsiteDetail({
   const handleBookNow = () => {
     onOpenBookingModal({
       campsite,
+      packageType,
       checkIn: checkIn || new Date().toISOString().split('T')[0],
       checkOut: checkOut || new Date(Date.now() + 86400000).toISOString().split('T')[0],
       guests,
@@ -151,7 +169,7 @@ export function CampsiteDetail({
             </span>
             <span className="px-3 py-1 rounded-full bg-sand-200 text-stone-700 text-xs font-semibold flex items-center gap-1">
               <MapPin className="w-3.5 h-3.5 text-nature-800" />
-              {campsite.destination?.name}, {campsite.destination?.district}
+              {campsite.destination?.name} ({campsite.destination?.bn_name || 'পটুয়াখালী'}), {campsite.destination?.district}
             </span>
           </div>
 
@@ -164,7 +182,7 @@ export function CampsiteDetail({
               <Star className="w-4 h-4 fill-campfire-amber text-campfire-amber" />
               <span>{campsite.rating || 4.9}</span>
               <span className="text-stone-500 font-normal">
-                ({campsite.review_count || 38} verified reviews)
+                ({campsite.review_count || 56} verified camper reviews)
               </span>
             </div>
             <span>&bull;</span>
@@ -217,7 +235,7 @@ export function CampsiteDetail({
             <div className="p-5 rounded-2xl bg-white border border-sand-300 shadow-sm flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-nature-800 text-white font-extrabold text-xl flex items-center justify-center ring-4 ring-nature-100">
-                  {campsite.host_name ? campsite.host_name.charAt(0) : 'H'}
+                  {campsite.host_name ? campsite.host_name.charAt(0) : 'C'}
                 </div>
                 <div>
                   <h3 className="font-extrabold text-base text-stone-900 flex items-center gap-1.5">
@@ -225,7 +243,7 @@ export function CampsiteDetail({
                     <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   </h3>
                   <p className="text-xs text-stone-500 font-medium">
-                    {campsite.host_badge || 'Verified Island Guide & Marine Warden'}
+                    {campsite.host_badge || 'Verified Island Guardian & Host'}
                   </p>
                 </div>
               </div>
@@ -239,14 +257,96 @@ export function CampsiteDetail({
             {/* Description */}
             <div>
               <h2 className="text-xl font-extrabold text-nature-950 mb-3">About this Island Camp</h2>
-              <p className="text-stone-700 leading-relaxed text-sm sm:text-base">
+              <p className="text-stone-800 leading-relaxed text-sm sm:text-base font-normal">
                 {campsite.description}
               </p>
             </div>
 
+            {/* WHO CAN COME vs WHO IS NOT SUITED (Camp de Sonadia / Char Hare Guidance) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                <div className="flex items-center gap-2 text-emerald-900 font-extrabold text-sm mb-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                  <span>কারা আসতে পারবেন (Who Can Come)</span>
+                </div>
+                <p className="text-xs sm:text-sm text-emerald-950 leading-relaxed">
+                  {campsite.who_can_come || "নীরবে নিভৃতে তাবুতে থেকে সমুদ্র, বালিয়াড়ি, লাল কাঁকড়া, বনের সৌন্দর্য ও ঝাউগাছের অকৃত্তিম রূপ দেখার আগ্রহ যাদের আছে।"}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200">
+                <div className="flex items-center gap-2 text-rose-900 font-extrabold text-sm mb-2">
+                  <AlertCircle className="w-4 h-4 text-rose-700 shrink-0" />
+                  <span>কাদের জন্য নয় (Who is NOT Suited)</span>
+                </div>
+                <p className="text-xs sm:text-sm text-rose-950 leading-relaxed">
+                  {campsite.who_not_suited || "যাদের অতিরিক্ত খুঁতখুঁতে স্বভাব, আউটডোরে বা দ্বীপে থাকার ন্যূনতম ধারণা বা ধৈর্য নেই।"}
+                </p>
+              </div>
+            </div>
+
+            {/* Daily Authentic 4-Meal Plan Breakdown */}
+            {campsite.meal_plan && (
+              <div className="bg-white rounded-2xl border border-sand-300 p-6 shadow-sm">
+                <div className="flex items-center justify-between pb-4 border-b border-sand-300 mb-5">
+                  <div className="flex items-center gap-2 text-nature-950 font-extrabold text-lg">
+                    <Utensils className="w-5 h-5 text-campfire" />
+                    <span>খাবারের বিস্তারিত মেন্যু (4-Meal Plan Included)</span>
+                  </div>
+                  <span className="text-xs font-bold text-nature-800 bg-sand-200 px-3 py-1 rounded-full">
+                    প্যাকেজের অন্তর্ভুক্ত
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                      (১) দুপুর (২:০০ - ৩:০০ টা)
+                    </span>
+                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                      {campsite.meal_plan.lunch}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                      (২) বিকাল (৬:০০ - ৮:০০ টা)
+                    </span>
+                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                      {campsite.meal_plan.afternoon}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                      (৩) রাত (১০:০০ - ১১:০০ টা)
+                    </span>
+                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                      {campsite.meal_plan.dinner_bbq}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                      (৪) সকালের নাস্তা
+                    </span>
+                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                      {campsite.meal_plan.breakfast}
+                    </p>
+                  </div>
+                </div>
+
+                {campsite.special_package_perks && (
+                  <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 font-medium">
+                    <strong>★★★ স্পেশাল প্যাকেজের সুবিধা:</strong> {campsite.special_package_perks}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Amenities Grid */}
             <div>
-              <h2 className="text-xl font-extrabold text-nature-950 mb-4">Camp Amenities & Essentials</h2>
+              <h2 className="text-xl font-extrabold text-nature-950 mb-4">Camp Features & Island Amenities</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {campsite.amenities?.map((amenity, idx) => (
                   <div
@@ -267,7 +367,7 @@ export function CampsiteDetail({
               <div className="p-5 border-b border-sand-300 bg-sand-200/50 flex items-center gap-2">
                 <Compass className="w-5 h-5 text-nature-900" />
                 <h3 className="font-extrabold text-stone-900 text-lg">
-                  Island Logistics & How to Reach
+                  Island Logistics & How to Reach (আসার উপায়)
                 </h3>
               </div>
 
@@ -279,45 +379,26 @@ export function CampsiteDetail({
                 >
                   <span className="flex items-center gap-2">
                     <Anchor className="w-4 h-4 text-nature-800" />
-                    Boat & Trawler Timings from Mainland Ghats
+                    Dhaka to Char Montaz / Char Hare Route & Trawler Schedule
                   </span>
                   {activeAccordion === 'boats' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </button>
                 {activeAccordion === 'boats' && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-600 space-y-2 bg-sand-50/50">
-                    <p className="font-medium text-stone-900">{campsite.boat_schedule || campsite.destination?.boat_schedule}</p>
-                    <p className="text-stone-500">
-                      <strong>Ghat Terminal:</strong> {campsite.destination?.ghat_name}. Our island camp team will meet you at the island landing point.
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-700 space-y-2 bg-sand-50/50 leading-relaxed">
+                    <p className="font-semibold text-stone-900">
+                      ১. ঢাকা সদরঘাট থেকে প্রতিদিন বিকাল ৫:৩০ মিনিটে চর মোন্তাজ / গলাচিপাগামী আধুনিক লঞ্চ ছাড়ে।
                     </p>
-                  </div>
-                )}
-              </div>
-
-              {/* Accordion Item 2: Tide & Weather */}
-              <div className="border-b border-sand-200">
-                <button
-                  onClick={() => setActiveAccordion(activeAccordion === 'tides' ? null : 'tides')}
-                  className="w-full p-4 text-left flex items-center justify-between font-bold text-stone-800 hover:bg-sand-100 transition-colors text-sm"
-                >
-                  <span className="flex items-center gap-2">
-                    <Waves className="w-4 h-4 text-nature-800" />
-                    Ocean Tides & Seasonal Crossing Advisories
-                  </span>
-                  {activeAccordion === 'tides' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </button>
-                {activeAccordion === 'tides' && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-600 space-y-2 bg-sand-50/50">
                     <p>
-                      High tide allows direct jetty docking; low tide requires small transfer dinghies or mudflat walking boards. Island crossings operate during daylight hours only.
+                      ২. পরদিন সকাল ৭:৩০ মিনিটে চর মোন্তাজ ঘাটে পৌঁছানোর পর স্থানীয় ট্রলার কিংবা স্পিডবোটে ৪৫-৬০ মিনিটে সরাসরি চর হরের বালুচরে ক্যাম্পসাইটে নামা যায়।
                     </p>
-                    <p className="text-campfire font-semibold">
-                      Best season for calm seas: November to March.
+                    <p>
+                      ৩. বিকল্প রুট: ঢাকা থেকে বাসে পটুয়াখালী/কুয়াকাটা হয়েও স্পিডবোট বা ট্রলার রিজার্ভ নিয়ে সরাসরি সোনার চর ও চর হরে পৌঁছানো সম্ভব।
                     </p>
                   </div>
                 )}
               </div>
 
-              {/* Accordion Item 3: Island Rules */}
+              {/* Accordion Item 2: Island Rules */}
               <div>
                 <button
                   onClick={() => setActiveAccordion(activeAccordion === 'rules' ? null : 'rules')}
@@ -325,52 +406,57 @@ export function CampsiteDetail({
                 >
                   <span className="flex items-center gap-2">
                     <Flame className="w-4 h-4 text-campfire" />
-                    Campground Rules & Eco-Tourism Pledge
+                    Campground Principles & Red Crab Conservation
                   </span>
                   {activeAccordion === 'rules' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </button>
                 {activeAccordion === 'rules' && (
                   <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-600 space-y-2 bg-sand-50/50">
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>Strict Leave-No-Trace: Pack out all non-biodegradable plastics and batteries.</li>
-                      <li>Quiet hours after 11:00 PM to respect nesting marine wildlife.</li>
-                      <li>Campfire only allowed in designated stone/iron fire circles.</li>
-                      <li>Alcohol & narcotics strictly prohibited on local community islands.</li>
+                      {campsite.rules?.map((rule, idx) => (
+                        <li key={idx}>{rule}</li>
+                      )) || (
+                        <>
+                          <li>লাল কাঁকড়ার বিচরণস্থলে অযথা পদদলিত না করে তাদের সুরক্ষা দিন।</li>
+                          <li>কোনো ধরনের ওয়ান-টাইম প্লাস্টিক দ্বীপে ফেলে আসবেন না।</li>
+                          <li>ক্যাম্পফায়ার কেবল নির্ধারিত ফায়ার রিংয়েই করা যাবে।</li>
+                        </>
+                      )}
                     </ul>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Verified Reviews Section */}
+            {/* Camper Reviews */}
             <div>
               <h2 className="text-xl font-extrabold text-nature-950 mb-4 flex items-center gap-2">
                 <span>Camper Reviews</span>
                 <span className="text-sm font-semibold text-stone-500">
-                  ★ {campsite.rating || 4.9} ({campsite.review_count || 38})
+                  ★ {campsite.rating || 4.95} ({campsite.review_count || 56})
                 </span>
               </h2>
 
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-white border border-sand-300">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="font-bold text-stone-900 text-sm">Tanvir Chowdhury</div>
-                    <div className="text-xs text-stone-400">January 2026</div>
+                    <div className="font-bold text-stone-900 text-sm">Nabil Mahmud</div>
+                    <div className="text-xs text-stone-400">February 2026</div>
                   </div>
                   <div className="flex text-campfire-amber mb-2 text-xs">★★★★★</div>
                   <p className="text-xs sm:text-sm text-stone-600">
-                    "Unbelievable experience! Stargazing from the tent porch while hearing the waves break on Saint Martin coral reef was surreal. Host provided hot coral fish BBQ and solar chargers worked perfectly."
+                    "চর হরের ক্যাম্প দে অসাধারণ অভিজ্ঞতা! কাঠের ওয়াচ টাওয়ার থেকে পুরো সৈকত আর কোটি লাল কাঁকড়া দেখার মুহূর্ত ভুলবার নয়। দুপুরের তাজা মাছ আর রাতের বার্বিকিউ একদম অথেনটিক ছিল।"
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white border border-sand-300">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="font-bold text-stone-900 text-sm">Fariha Tasnim</div>
-                    <div className="text-xs text-stone-400">December 2025</div>
+                    <div className="font-bold text-stone-900 text-sm">Sumaiya Rahman</div>
+                    <div className="text-xs text-stone-400">January 2026</div>
                   </div>
                   <div className="flex text-campfire-amber mb-2 text-xs">★★★★★</div>
                   <p className="text-xs sm:text-sm text-stone-600">
-                    "Very safe for female solo travelers and couples. The host accompanied us from the ghat and ensured clean bio-toilets and fresh drinking water. Highly recommend the kayak upgrade!"
+                    "চর মোন্তাজে মান্তা সম্প্রদায়ের সাথে নৌকায় সময় কাটানো এবং চর হরের নিরিবিলি সৈকতে তাবু খাটিয়ে থাকা—অবিশ্বাস্য অ্যাডভেঞ্চার। মেয়েদের জন্যও ক্যাম্প খুবই নিরাপদ।"
                   </p>
                 </div>
               </div>
@@ -381,17 +467,43 @@ export function CampsiteDetail({
           <div className="lg:col-span-1">
             <div className="sticky top-28 bg-white rounded-3xl p-6 border border-sand-300 shadow-float">
               
-              {/* Price Header */}
-              <div className="flex items-baseline justify-between pb-4 border-b border-sand-300 mb-5">
-                <div>
-                  <span className="text-2xl sm:text-3xl font-extrabold text-nature-950">
-                    {formatPrice(campsite.price_per_night)}
-                  </span>
-                  <span className="text-xs sm:text-sm text-stone-500 font-medium"> / night</span>
-                </div>
-                <div className="flex items-center gap-1 text-xs font-bold text-stone-900">
-                  <Star className="w-4 h-4 fill-campfire-amber text-campfire-amber" />
-                  <span>{campsite.rating || 4.9}</span>
+              {/* Package Selector (Regular ৳1500 vs Special ৳2000) */}
+              <div className="mb-5">
+                <span className="text-xs font-bold text-stone-500 uppercase tracking-wider block mb-2">
+                  Select Package (প্যাকেজ নির্বাচন)
+                </span>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setPackageType('regular')}
+                    className={`p-3 rounded-2xl border text-left transition-all ${
+                      packageType === 'regular'
+                        ? 'bg-nature-50 border-nature-900 ring-2 ring-nature-900/10'
+                        : 'bg-white border-sand-300 hover:border-stone-400'
+                    }`}
+                  >
+                    <div className="text-xs font-bold text-stone-900">Regular Package</div>
+                    <div className="text-base font-extrabold text-nature-950 mt-0.5">
+                      {formatPrice(campsite.price_per_night || 1500)}
+                    </div>
+                    <div className="text-[10px] text-stone-500">4 Meals + Tent + Foam</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPackageType('special')}
+                    className={`p-3 rounded-2xl border text-left transition-all ${
+                      packageType === 'special'
+                        ? 'bg-amber-50 border-campfire-amber ring-2 ring-campfire-amber/20'
+                        : 'bg-white border-sand-300 hover:border-stone-400'
+                    }`}
+                  >
+                    <div className="text-xs font-bold text-stone-900">Special Package</div>
+                    <div className="text-base font-extrabold text-campfire-amber mt-0.5">
+                      {formatPrice(campsite.special_package_price || 2000)}
+                    </div>
+                    <div className="text-[10px] text-stone-500">Both Chicken & Fish + Extra Dinner</div>
+                  </button>
                 </div>
               </div>
 
@@ -405,6 +517,7 @@ export function CampsiteDetail({
                     </label>
                     <input
                       type="date"
+                      min={new Date().toISOString().split('T')[0]}
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
                       className="w-full bg-transparent text-xs font-bold text-stone-900 focus:outline-none mt-0.5"
@@ -416,6 +529,7 @@ export function CampsiteDetail({
                     </label>
                     <input
                       type="date"
+                      min={checkIn || new Date().toISOString().split('T')[0]}
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
                       className="w-full bg-transparent text-xs font-bold text-stone-900 focus:outline-none mt-0.5"
@@ -427,7 +541,7 @@ export function CampsiteDetail({
                 <div className="bg-sand-100 p-3 rounded-2xl border border-sand-300 flex items-center justify-between">
                   <div>
                     <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Campers</div>
-                    <div className="text-xs font-bold text-stone-900">{guests} Guests</div>
+                    <div className="text-xs font-bold text-stone-900">{guests} Persons</div>
                   </div>
                   <div className="flex items-center gap-2">
                     <button
@@ -440,7 +554,7 @@ export function CampsiteDetail({
                     <span className="font-bold text-xs w-4 text-center">{guests}</span>
                     <button
                       type="button"
-                      onClick={() => setGuests(Math.min(campsite.capacity || 4, guests + 1))}
+                      onClick={() => setGuests(Math.min(campsite.capacity || 10, guests + 1))}
                       className="w-7 h-7 rounded-full bg-white border border-sand-300 flex items-center justify-center font-bold text-xs hover:bg-sand-200"
                     >
                       +
@@ -451,42 +565,45 @@ export function CampsiteDetail({
                 {/* Optional Island Add-ons */}
                 <div>
                   <div className="text-xs font-extrabold text-stone-800 uppercase tracking-wider mb-2">
-                    Optional Island Experiences & Add-ons
+                    Island Experiences & Add-ons
                   </div>
                   <div className="space-y-2">
-                    {ADDONS_LIST.map((addon) => (
-                      <div
-                        key={addon.id}
-                        onClick={() => handleToggleAddon(addon.id)}
-                        className={`p-3 rounded-xl border cursor-pointer transition-all ${
-                          selectedAddons[addon.id]
-                            ? 'bg-nature-50 border-nature-800'
-                            : 'bg-white border-sand-300 hover:border-stone-400'
-                        }`}
-                      >
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-start gap-2">
-                            <input
-                              type="checkbox"
-                              checked={!!selectedAddons[addon.id]}
-                              onChange={() => {}}
-                              className="mt-0.5 rounded text-nature-800 focus:ring-nature-800"
-                            />
-                            <div>
-                              <div className="text-xs font-bold text-stone-900 leading-tight">
-                                {addon.title}
-                              </div>
-                              <div className="text-[11px] text-stone-500 mt-0.5">
-                                {addon.description}
+                    {ADDONS_LIST.map((addon) => {
+                      if (addon.id === 'special_meal' && packageType === 'special') return null;
+                      return (
+                        <div
+                          key={addon.id}
+                          onClick={() => handleToggleAddon(addon.id)}
+                          className={`p-3 rounded-xl border cursor-pointer transition-all ${
+                            selectedAddons[addon.id]
+                              ? 'bg-nature-50 border-nature-800'
+                              : 'bg-white border-sand-300 hover:border-stone-400'
+                          }`}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div className="flex items-start gap-2">
+                              <input
+                                type="checkbox"
+                                checked={!!selectedAddons[addon.id]}
+                                onChange={() => {}}
+                                className="mt-0.5 rounded text-nature-800 focus:ring-nature-800"
+                              />
+                              <div>
+                                <div className="text-xs font-bold text-stone-900 leading-tight">
+                                  {addon.title}
+                                </div>
+                                <div className="text-[11px] text-stone-500 mt-0.5">
+                                  {addon.description}
+                                </div>
                               </div>
                             </div>
+                            <span className="text-xs font-extrabold text-nature-900 shrink-0 ml-2">
+                              +{formatPrice(addon.price)}
+                            </span>
                           </div>
-                          <span className="text-xs font-extrabold text-nature-900 shrink-0 ml-2">
-                            +{formatPrice(addon.price)}
-                          </span>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -495,7 +612,7 @@ export function CampsiteDetail({
               <div className="space-y-2 py-4 border-t border-sand-300 text-xs sm:text-sm text-stone-600 mb-6">
                 <div className="flex justify-between">
                   <span>
-                    {formatPrice(campsite.price_per_night)} x {nights} night{nights > 1 ? 's' : ''}
+                    {formatPrice(perPersonPerNight)} x {guests} camper{guests > 1 ? 's' : ''} ({nights}N)
                   </span>
                   <span className="font-semibold text-stone-900">
                     {formatPrice(basePriceBdt)}
@@ -512,8 +629,8 @@ export function CampsiteDetail({
                 )}
 
                 <div className="flex justify-between text-emerald-700">
-                  <span>Platform & Island Warden Fee</span>
-                  <span className="font-bold">FREE (৳0)</span>
+                  <span>All 4 Meals (Lunch, Snack, BBQ, Breakfast)</span>
+                  <span className="font-bold">INCLUDED</span>
                 </div>
 
                 <div className="pt-2 border-t border-sand-300 flex justify-between text-base font-extrabold text-stone-950">
@@ -528,7 +645,7 @@ export function CampsiteDetail({
                 className="w-full py-4 bg-campfire hover:bg-campfire-hover text-white rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-98"
               >
                 <Flame className="w-5 h-5 fill-white" />
-                <span>Instant Book Camp</span>
+                <span>Instant Book Char Hare Camp</span>
               </button>
 
               <p className="text-center text-[11px] text-stone-500 mt-3">

@@ -39,7 +39,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                   onClick={() => onSelectDestination("Char Hare")}
                   className="hover:text-campfire transition-colors font-medium text-white"
                 >
-                  ⭐ Camp De Char Hare (ক্যাম্প দে চর হেয়ার)
+                  ⭐ Char Hare the Mysterious Island (চর হেয়ার)
                 </button>
               </li>
               <li>

@@ -46,13 +46,13 @@ DESTINATIONS_DATA = [
 
 CAMPSITES_DATA = [
     {
-        "title": "Camp De Char Heyar - Watchtower & Beach Camp",
-        "slug": "camp-de-char-heyar",
+        "title": "Char Hare the Mysterious Island - Watchtower & Beach Camp",
+        "slug": "char-hare-mysterious-island",
         "destination_name": "Char Heyar",
         "category": "Char Heyar Camps",
         "price_per_night": 1500,
         "capacity": 4,
-        "description": "নীরবে নিভৃতে তাবুতে থেকে বঙ্গোপসাগরের উত্তাল সমুদ্র, অনন্ত বালিয়াড়ি, কোটি লাল কাঁকড়া, এবং ঝাউগাছের অকৃত্তিম সৌন্দর্য অবলোকনের জন্য চর হেয়ারের একমাত্র সুসজ্জিত আউটডোর ক্যাম্প সাইট। দ্বীপের একমাত্র কাঠের ওয়াচ টাওয়ার থেকে পুরো সমুদ্র ও সৈকত অবলোকন সম্ভব। রয়েছে নিজস্ব কিচেন, ৩টি পরিষ্কার ওয়াশরুম, ২টি মিষ্টি পানির টিউবওয়েল, এবং রাতে নিরাপত্তার জন্য সার্বক্ষণিক নাইট গার্ড।",
+        "description": "নীরবে নিভৃতে তাবুতে থেকে বঙ্গোপসাগরের উত্তাল সমুদ্র, অনন্ত বালিয়াড়ি, কোটি লাল কাঁকড়া, এবং ঝাউগাছের অকৃত্তিম সৌন্দর্য অবলোকনের জন্য Char Hare the Mysterious Island (চর হেয়ার)-এর সুসজ্জিত আউটডোর ক্যাম্প সাইট। দ্বীপের একমাত্র কাঠের ওয়াচ টাওয়ার থেকে পুরো সমুদ্র ও সৈকত অবলোকন সম্ভব। রয়েছে নিজস্ব কিচেন, ৩টি পরিষ্কার ওয়াশরুম, ২টি মিষ্টি পানির টিউবওয়েল, এবং রাতে নিরাপত্তার জন্য সার্বক্ষণিক নাইট গার্ড।",
         "amenities": [
             "Island's Only Wooden Watch Tower",
             "Pillows, Foam Mattress & Warm Blankets",

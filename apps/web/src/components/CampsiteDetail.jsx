@@ -262,7 +262,7 @@ export function CampsiteDetail({
               </p>
             </div>
 
-            {/* WHO CAN COME vs WHO IS NOT SUITED (Camp de Sonadia / Char Hare Guidance) */}
+            {/* WHO CAN COME vs WHO IS NOT SUITED (Char Hare the Mysterious Island Guidance) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
                 <div className="flex items-center gap-2 text-emerald-900 font-extrabold text-sm mb-2">

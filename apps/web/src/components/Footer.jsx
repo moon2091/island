@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, ShieldCheck, Heart, MapPin, Phone, Mail, Globe, Anchor, Youtube } from 'lucide-react';
+import { Flame, ShieldCheck, Heart, MapPin, Phone, Mail, Globe, Anchor, Youtube, Newspaper } from 'lucide-react';
 
 export function Footer({ onOpenLogistics, onSelectDestination }) {
   return (
@@ -20,7 +20,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               </span>
             </div>
             <p className="text-xs text-sand-300 leading-relaxed">
-              চর হরে, সোনার চর, জাহাজ মারা, এবং চর মোন্তাজের মান্তা যাযাবর সম্প্রদায়ের নদী-উপকূলীয় প্রান্তরে বাংলাদেশের প্রথম খাঁটি আউটডোর অ্যাডভেঞ্চার ও ক্যাম্পিং প্ল্যাটফর্ম।
+              চর হেয়ার, সোনার চর, জাহাজ মারা, এবং চর মোন্তাজের মান্তা যাযাবর সম্প্রদায়ের নদী-উপকূলীয় প্রান্তরে বাংলাদেশের প্রথম খাঁটি আউটডোর অ্যাডভেঞ্চার ও ক্যাম্পিং প্ল্যাটফর্ম।
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
               <ShieldCheck className="w-4 h-4" />
@@ -39,7 +39,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                   onClick={() => onSelectDestination("Char Hare")}
                   className="hover:text-campfire transition-colors font-medium text-white"
                 >
-                  ⭐ Camp De Char Hare (ক্যাম্প দে চর হরে)
+                  ⭐ Camp De Char Hare (ক্যাম্প দে চর হেয়ার)
                 </button>
               </li>
               <li>
@@ -93,6 +93,15 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
             <ul className="space-y-2 text-xs text-sand-300">
               <li>
                 <a
+                  href="#travel-guides"
+                  className="hover:text-campfire transition-colors flex items-center gap-1.5 text-white font-medium"
+                >
+                  <Newspaper className="w-3.5 h-3.5 text-campfire" />
+                  <span>জাতীয় গণমাধ্যম ফিচার ও গাইড (Media Press)</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="#travel-vlogs"
                   className="hover:text-campfire transition-colors flex items-center gap-1.5 text-white font-medium"
                 >
@@ -106,7 +115,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                   className="hover:text-campfire transition-colors flex items-center gap-1.5 text-white font-medium"
                 >
                   <Anchor className="w-3.5 h-3.5 text-campfire" />
-                  <span>ঢাকা টু চর মোন্তাজ / চর হরে আসার উপায়</span>
+                  <span>ঢাকা টু চর মোন্তাজ / চর হেয়ার আসার উপায়</span>
                 </button>
               </li>
               <li>
@@ -130,7 +139,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               Char Hare Camping Updates
             </h4>
             <p className="text-xs text-sand-300">
-              চর হরে ওয়াচ টাওয়ার বুকিং, পূর্ণিমা ক্যাম্পিং ও স্পেশাল বার্বিকিউ উইকএন্ডের আপডেট পেতে আপনার ইমেইল দিন।
+              চর হেয়ার ওয়াচ টাওয়ার বুকিং, পূর্ণিমা ক্যাম্পিং ও স্পেশাল বার্বিকিউ উইকএন্ডের আপডেট পেতে আপনার ইমেইল দিন।
             </p>
             <div className="flex gap-2">
               <input

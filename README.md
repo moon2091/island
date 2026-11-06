@@ -1,13 +1,13 @@
 # Camp De Char Hare | Island Camping Bangladesh 🏕️ 🌊
 
 > **Live Target Domain:** [islandcampingbangladesh.com](https://islandcampingbangladesh.com)  
-> **Core Focus:** Authentic outdoor and beach camping on **Char Hare (চর হরে)**, Shonar Char, Jahaj Mara, Char Montaz homestays, and the indigenous Manta Community water nomad lifestyle in southern Bangladesh.
+> **Core Focus:** Authentic outdoor and beach camping on **Char Hare (চর হেয়ার)**, Shonar Char, Jahaj Mara, Char Montaz homestays, and the indigenous Manta Community water nomad lifestyle in southern Bangladesh.
 
 ---
 
 ## 🌟 Highlights & Platform Features
 
-### 1. Camp De Char Hare (ক্যাম্প দে চর হরে)
+### 1. Camp De Char Hare (ক্যাম্প দে চর হেয়ার)
 - **Prime Location:** Secluded sandbar island south of Rangabali / Char Montaz in Patuakhali, surrounded by the Bay of Bengal.
 - **Wooden Watchtower:** Island's sole wooden watchtower offering 360-degree views of millions of red crabs, sand dunes, jhau forest, and rolling ocean surf.
 - **Authentic 4-Meal Plan Included:**
@@ -26,7 +26,7 @@
   - Total solitude: private beach experience with zero neighboring campsites.
 
 ### 2. Exclusive Destinations
-- **Char Hare (চর হরে):** Wild beach tents, red crab colonies, and watchtower stargazing.
+- **Char Hare (চর হেয়ার):** Wild beach tents, red crab colonies, and watchtower stargazing.
 - **Shonar Char (সোনার চর):** "Golden Island" with mangrove deer trails, endless sandy beaches, and sunrise/sunset view.
 - **Jahaj Mara (জাহাজ মারা):** Calm estuary beaches, pine groves, and peaceful solitude.
 - **Char Montaz (চর মোন্তাজ):** Traditional island village homestays, cycling on dykes, and fresh duck curry/hilsa.

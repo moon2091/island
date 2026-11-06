@@ -66,7 +66,7 @@ export function SearchBar({
             <span>
               {selectedDestination && selectedDestination !== 'All'
                 ? selectedDestination
-                : 'Char Hare & Southern Islands (চর হরে)'}
+                : 'Char Hare & Southern Islands (চর হেয়ার)'}
             </span>
           </div>
         </div>

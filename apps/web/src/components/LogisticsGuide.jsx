@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, LifeBuoy, AlertTriangle, Compass, Phone, ShieldCheck, MapPin, X, Navigation } from 'lucide-react';
+import { Anchor, LifeBuoy, AlertTriangle, Compass, Phone, ShieldCheck, MapPin, X, Navigation, MessageCircle } from 'lucide-react';
 import { DESTINATIONS } from '../data/seedCampsites';
 
 export function LogisticsGuide({ onClose }) {
@@ -77,6 +77,28 @@ export function LogisticsGuide({ onClose }) {
             <p className="text-xs text-amber-800 leading-relaxed">
               চর হেয়ার ও সোনার চর মোহনা ও বঙ্গোপসাগরের মুখে অবস্থিত। শীত ও বসন্তকালে (নভেম্বর থেকে মার্চ) সাগর শান্ত থাকে এবং ক্যাম্পিংয়ের সেরা মৌসুম। ট্রলারে বা স্পিডবোটে চলাচলের সময় লাইফ জ্যাকেট পরা বাধ্যতামূলক।
             </p>
+          </div>
+
+          {/* Official WhatsApp Boat Charter & Help Desk */}
+          <div className="p-4 rounded-2xl bg-emerald-950 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-emerald-800">
+            <div>
+              <div className="font-extrabold text-sm flex items-center gap-2 text-[#25D366]">
+                <MessageCircle className="w-4 h-4 fill-[#25D366]" />
+                অফিসিয়াল বোট রিজার্ভেশন ও বুকিং হেল্পডেস্ক
+              </div>
+              <div className="text-xs text-sand-300 mt-0.5">
+                সরাসরি স্পিডবোট/ট্রলার রিজার্ভ, ওয়াচ টাওয়ার স্লট নিশ্চিত ও তথ্যের জন্য WhatsApp করুন
+              </div>
+            </div>
+            <a
+              href="https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20need%20assistance%20with%20boat%20logistics%20and%20camp%20booking"
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 text-xs font-black rounded-xl transition-colors shrink-0 flex items-center gap-1.5"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-emerald-950" />
+              <span>WhatsApp: +8801713880032</span>
+            </a>
           </div>
 
           {/* Emergency Hotlines */}

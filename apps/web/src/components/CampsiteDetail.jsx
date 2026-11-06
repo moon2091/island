@@ -27,6 +27,7 @@ import {
   Eye,
   AlertCircle,
   Check,
+  MessageCircle,
 } from 'lucide-react';
 import { ADDONS_LIST } from '../data/seedCampsites';
 
@@ -645,11 +646,24 @@ export function CampsiteDetail({
                 className="w-full py-4 bg-campfire hover:bg-campfire-hover text-white rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-98"
               >
                 <Flame className="w-5 h-5 fill-white" />
-                <span>Instant Book Char Hare Camp</span>
+                <span>Instant Book Online</span>
               </button>
 
+              {/* Direct WhatsApp Booking & Query Button */}
+              <a
+                href={`https://wa.me/8801713880032?text=${encodeURIComponent(
+                  `Hello Island Camping BD, I want to confirm booking/inquire about ${campsite?.title} (${campsite?.destination?.name}) for ${guests} campers from ${checkIn || 'Dates TBD'} to ${checkOut || 'TBD'}. Total calculated: ${formatPrice(totalBdt)}.`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full mt-2.5 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98"
+              >
+                <MessageCircle className="w-4 h-4 fill-emerald-950 text-emerald-950" />
+                <span>Book / Inquire via WhatsApp (+8801713880032)</span>
+              </a>
+
               <p className="text-center text-[11px] text-stone-500 mt-3">
-                Zero booking fees &bull; Instant WhatsApp confirmation voucher
+                Zero booking fees &bull; Instant order confirmation & queries on WhatsApp (+8801713880032)
               </p>
             </div>
           </div>

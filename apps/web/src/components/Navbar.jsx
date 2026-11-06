@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Compass, Flame, Heart, Menu, X, Shield, PhoneCall, HelpCircle, MapPin, Youtube, Newspaper } from 'lucide-react';
+import { Compass, Flame, Heart, Menu, X, Shield, PhoneCall, HelpCircle, MapPin, Youtube, Newspaper, MessageCircle } from 'lucide-react';
 
 export function Navbar({
   currency,
@@ -11,6 +11,9 @@ export function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hostModalOpen, setHostModalOpen] = useState(false);
+
+  const whatsappUrl =
+    'https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20want%20to%20inquire%20about%20Char%20Hare%20and%20southern%20island%20camps%20(Booking%20%26%20Queries)';
 
   return (
     <>
@@ -108,10 +111,22 @@ export function Navbar({
                 )}
               </button>
 
+              {/* Official WhatsApp Business Hotline */}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hidden lg:flex items-center gap-1.5 text-xs font-bold text-emerald-950 bg-[#25D366]/20 hover:bg-[#25D366]/30 px-3 py-2 rounded-lg transition-colors border border-emerald-300 shadow-sm"
+                title="Direct Booking & Order Confirmation on WhatsApp (+8801713880032)"
+              >
+                <MessageCircle className="w-3.5 h-3.5 fill-[#25D366] text-[#25D366]" />
+                <span>WhatsApp: +8801713880032</span>
+              </a>
+
               {/* Emergency Hotline Button */}
               <a
                 href="tel:999"
-                className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-nature-900 bg-nature-100 hover:bg-nature-200 px-3 py-2 rounded-lg transition-colors border border-nature-200"
+                className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-nature-900 bg-nature-100 hover:bg-nature-200 px-3 py-2 rounded-lg transition-colors border border-nature-200"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-nature-800" />
                 Coast Guard Helpline
@@ -206,6 +221,17 @@ export function Navbar({
                 {currency === 'BDT' ? '🇧🇩 BDT (৳)' : '🌐 USD ($)'}
               </button>
             </div>
+            {/* WhatsApp Booking Link Mobile */}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold text-emerald-950 bg-[#25D366]/25 hover:bg-[#25D366]/35 rounded-lg border border-emerald-300 transition-colors"
+            >
+              <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
+              <span>Direct Booking & Query: +8801713880032</span>
+            </a>
+
             <a
               href="tel:999"
               className="w-full flex items-center justify-center gap-2 py-2.5 mt-2 text-xs font-bold text-white bg-nature-900 rounded-lg"
@@ -247,12 +273,13 @@ export function Navbar({
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="https://wa.me/8801819000101?text=Hello%2C%20I%20am%20interested%20in%20listing%20my%20island%20campsite%20on%20Island%20Camping%20Bangladesh."
+                href="https://wa.me/8801713880032?text=Hello%2C%20I%20am%20interested%20in%20listing%20my%20island%20campsite%20on%20Island%20Camping%20Bangladesh."
                 target="_blank"
                 rel="noreferrer"
-                className="w-full py-3.5 bg-nature-900 hover:bg-nature-800 text-white font-bold text-center rounded-xl transition-colors shadow-md"
+                className="w-full py-3.5 bg-nature-900 hover:bg-nature-800 text-white font-bold text-center rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
               >
-                Chat on WhatsApp (+8801819000101)
+                <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
+                <span>Chat on WhatsApp (+8801713880032)</span>
               </a>
               <button
                 onClick={() => setHostModalOpen(false)}

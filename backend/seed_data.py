@@ -79,7 +79,7 @@ CAMPSITES_DATA = [
         "review_count": 56,
         "instant_book": True,
         "host_name": "Camp Master Shumon & Island Crew",
-        "host_phone": "+8801819000101",
+        "host_phone": "+8801713880032",
         "host_badge": "Verified Char Heyar Island Guardian",
         "ghat_info": "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / speedboat to Char Heyar sandbar"
     },
@@ -112,7 +112,7 @@ CAMPSITES_DATA = [
         "review_count": 42,
         "instant_book": True,
         "host_name": "Kader Majhi & Manta Community Elders",
-        "host_phone": "+8801712000202",
+        "host_phone": "+8801713880032",
         "host_badge": "Indigenous Manta Cultural Host",
         "ghat_info": "Char Montaz canal landing point, 5 mins walk from Launch Ghat"
     },
@@ -144,7 +144,7 @@ CAMPSITES_DATA = [
         "review_count": 34,
         "instant_book": True,
         "host_name": "Alamgir Hossain",
-        "host_phone": "+8801911000303",
+        "host_phone": "+8801713880032",
         "host_badge": "Shonar Char Wildlife Ranger",
         "ghat_info": "Pick-up from Char Montaz via scenic 40 mins engine trawler"
     },
@@ -176,7 +176,7 @@ CAMPSITES_DATA = [
         "review_count": 28,
         "instant_book": True,
         "host_name": "Master Ruhul Amin",
-        "host_phone": "+8801822000404",
+        "host_phone": "+8801713880032",
         "host_badge": "Respected Island Educator & Host",
         "ghat_info": "10 mins rickshaw or motorcycle ride from Char Montaz Launch Ghat"
     },
@@ -207,7 +207,7 @@ CAMPSITES_DATA = [
         "review_count": 22,
         "instant_book": True,
         "host_name": "Belal Hossain",
-        "host_phone": "+8801555000505",
+        "host_phone": "+8801713880032",
         "host_badge": "Estuary Navigator & Camp Host",
         "ghat_info": "Pick up by country trawler from Jahaj Mara canal mouth"
     },
@@ -238,7 +238,7 @@ CAMPSITES_DATA = [
         "review_count": 48,
         "instant_book": True,
         "host_name": "Nazmul Hasan",
-        "host_phone": "+8801733000606",
+        "host_phone": "+8801713880032",
         "host_badge": "Coastal Glamping Specialist",
         "ghat_info": "Gangamati Beach Point, 15 mins motorcycle/buggy ride from Kuakata Zero Point"
     }

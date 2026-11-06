@@ -9,6 +9,7 @@ import { LogisticsGuide } from './components/LogisticsGuide';
 import { FeaturedVideos } from './components/FeaturedVideos';
 import { TravelArticles } from './components/TravelArticles';
 import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { fetchCampsites, fetchDestinations } from './api/client';
 import { Sparkles, MapPin, Compass, Flame, Filter, Heart } from 'lucide-react';
 
@@ -332,6 +333,9 @@ export function App() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       />
+
+      {/* Global 24/7 WhatsApp Business Booking Desk */}
+      <FloatingWhatsApp />
     </div>
   );
 }

@@ -248,6 +248,21 @@ export function BookingModal({
                   </>
                 )}
               </button>
+
+              {/* Direct WhatsApp Order Confirmation */}
+              <div className="text-center pt-1">
+                <a
+                  href={`https://wa.me/8801713880032?text=${encodeURIComponent(
+                    `Hello Island Camping BD, I want to book/confirm order for ${campsite?.title} (${campsite?.destination?.name}) from ${checkIn} to ${checkOut} for ${guests} campers. Total: ${formatPrice(totalBdt)}. Name: ${guestName || 'Camper'}, Phone: ${guestPhone || 'Phone'}.`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-2.5 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-emerald-950 border border-emerald-300 rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
+                  <span>Direct Book & Order Confirmation on WhatsApp (+8801713880032)</span>
+                </a>
+              </div>
             </form>
           </div>
         ) : (
@@ -258,14 +273,14 @@ export function BookingModal({
             </div>
 
             <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">
-              Booking Confirmed
+              Booking Reserved
             </span>
 
             <h2 className="text-2xl font-extrabold text-nature-950 mt-3 mb-1">
               Pack Your Bags for {campsite?.destination?.name}!
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 max-w-sm mx-auto mb-6">
-              Your island campsite is secured. A copy of this voucher has been dispatched to {guestEmail}.
+              Your island campsite is secured. Please send your voucher code to our official WhatsApp number to finalize boat timings and welcome arrangements.
             </p>
 
             {/* Printable Voucher Card */}
@@ -305,23 +320,23 @@ export function BookingModal({
               </div>
 
               <div className="pt-2 border-t border-sand-200 flex items-center justify-between text-[11px] text-stone-600">
-                <span>Island Host: {campsite?.host_name}</span>
-                <span className="font-mono">{campsite?.host_phone}</span>
+                <span>Official Booking Desk:</span>
+                <span className="font-mono font-bold text-emerald-800">WhatsApp: +8801713880032</span>
               </div>
             </div>
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href={`https://wa.me/${campsite?.host_phone?.replace(/[^0-9]/g, '') || '8801819000101'}?text=${encodeURIComponent(
-                  `Hi ${campsite?.host_name}, I just booked ${campsite?.title} with booking code ${confirmedBooking?.booking_code}. Looking forward to reaching the ghat on ${checkIn}!`
+                href={`https://wa.me/8801713880032?text=${encodeURIComponent(
+                  `Hi Island Camping BD, I just placed a booking for ${campsite?.title} with voucher code ${confirmedBooking?.booking_code || 'ISL-CONFIRMED'}. Dates: ${checkIn} to ${checkOut}, Guests: ${guests}, Total: ${formatPrice(totalBdt)}. Primary Camper: ${guestName} (${guestPhone}). Please confirm my order!`
                 )}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
+                className="flex-1 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Island Host</span>
+                <MessageCircle className="w-4 h-4 fill-emerald-950" />
+                <span>Confirm on WhatsApp (+8801713880032)</span>
               </a>
 
               <button

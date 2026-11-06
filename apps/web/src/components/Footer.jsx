@@ -1,7 +1,24 @@
 import React from 'react';
-import { Flame, ShieldCheck, Heart, MapPin, Phone, Mail, Globe, Anchor, Youtube, Newspaper } from 'lucide-react';
+import {
+  Flame,
+  ShieldCheck,
+  Heart,
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Anchor,
+  Youtube,
+  Newspaper,
+  Facebook,
+  Instagram,
+  MessageCircle,
+} from 'lucide-react';
 
 export function Footer({ onOpenLogistics, onSelectDestination }) {
+  const whatsappUrl =
+    'https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20want%20to%20inquire%20about%20Char%20Hare%20and%20southern%20island%20camps%20(Booking%20%26%20Queries)';
+
   return (
     <footer className="bg-nature-950 text-sand-200 pt-16 pb-12 border-t border-nature-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +26,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-nature-800">
           
-          {/* Col 1: Brand & Bio */}
+          {/* Col 1: Brand & Bio & Socials */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-nature-900 flex items-center justify-center text-campfire shadow-inner">
@@ -20,11 +37,52 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               </span>
             </div>
             <p className="text-xs text-sand-300 leading-relaxed">
-              চর হেয়ার, সোনার চর, জাহাজ মারা, এবং চর মোন্তাজের মান্তা যাযাবর সম্প্রদায়ের নদী-উপকূলীয় প্রান্তরে বাংলাদেশের প্রথম খাঁটি আউটডোর অ্যাডভেঞ্চার ও ক্যাম্পিং প্ল্যাটফর্ম।
+              চর হেয়ার (Char Hare the Mysterious Island), সোনার চর, জাহাজ মারা, এবং চর মোন্তাজের মান্তা যাযাবর সম্প্রদায়ের নদী-উপকূলীয় প্রান্তরে বাংলাদেশের প্রথম খাঁটি আউটডোর অ্যাডভেঞ্চার ও ক্যাম্পিং প্ল্যাটফর্ম।
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
               <ShieldCheck className="w-4 h-4" />
               <span>Leave No Trace &bull; Red Crab & Wildlife Conservation</span>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="pt-2">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2.5">
+                Connect With Us
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/islandcampingbangladesh"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook Page"
+                  className="w-9 h-9 rounded-xl bg-nature-900 hover:bg-[#1877F2] text-sand-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  title="Follow on Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="https://www.Instagram.com/islandcampingbangladesh"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram Profile"
+                  className="w-9 h-9 rounded-xl bg-nature-900 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-sand-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  title="Follow on Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp Business"
+                  className="w-9 h-9 rounded-xl bg-nature-900 hover:bg-[#25D366] text-sand-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  title="Chat on WhatsApp (+8801713880032)"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -119,60 +177,94 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                 </button>
               </li>
               <li>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp: +8801713880032</span>
+                </a>
+              </li>
+              <li>
                 <span className="text-stone-400">National Emergency: 999</span>
               </li>
               <li>
                 <span className="text-stone-400">Patuakhali Coast Guard Helpline</span>
               </li>
               <li>
-                <span className="text-stone-400">Red Crab Sanctuary Protection Guidelines</span>
-              </li>
-              <li>
-                <span className="text-stone-400">Manta Indigenous Culture Etiquette</span>
+                <span className="text-stone-400">Red Crab Sanctuary Protection</span>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Booking Alerts & Updates */}
+          {/* Col 4: Official WhatsApp Business & Booking Queries */}
           <div className="space-y-3">
             <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">
-              Char Hare Camping Updates
+              Official Booking & Queries
             </h4>
-            <p className="text-xs text-sand-300">
-              চর হেয়ার ওয়াচ টাওয়ার বুকিং, পূর্ণিমা ক্যাম্পিং ও স্পেশাল বার্বিকিউ উইকএন্ডের আপডেট পেতে আপনার ইমেইল দিন।
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 bg-nature-900 border border-nature-800 rounded-xl text-xs text-white placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-campfire"
-              />
-              <button
-                type="button"
-                className="px-3.5 py-2 bg-campfire hover:bg-campfire-hover text-white rounded-xl text-xs font-bold transition-colors shrink-0"
+
+            {/* WhatsApp Business Card */}
+            <div className="p-4 rounded-2xl bg-gradient-to-br from-nature-900 to-emerald-950/80 border border-emerald-800/60 shadow-lg space-y-2.5">
+              <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wide">
+                <MessageCircle className="w-4 h-4 text-[#25D366] fill-[#25D366]" />
+                <span>WhatsApp Business Desk</span>
+              </div>
+              <div className="text-sm font-extrabold text-white tracking-tight">
+                +8801713880032
+              </div>
+              <p className="text-[11px] text-emerald-200/90 leading-snug">
+                যেকোনো বুকিং নিশ্চিতকরণ (Order Confirmation), বিস্তারিত তথ্য ও নৌকার শিডিউল জানতে সরাসরি WhatsApp এ যোগাযোগ করুন।
+              </p>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-md transition-colors"
               >
-                Join
-              </button>
+                <MessageCircle className="w-3.5 h-3.5 fill-emerald-950" />
+                <span>Book / Query on WhatsApp</span>
+              </a>
             </div>
-            <div className="text-[11px] text-stone-400 pt-1">
-              Zero spam. Dispatched directly from Char Hare team.
-            </div>
+
+            <p className="text-[11px] text-stone-400 pt-1">
+              সরাসরি কল বা WhatsApp এ চ্যাট করে ক্যাম্প সাইট ও ওয়াচ টাওয়ার স্লট নিশ্চিত করুন।
+            </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh. Char Hare & Southern Islands Eco-Tourism.</span>
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hover:text-white transition-colors cursor-pointer">
-              Privacy Policy
-            </span>
-            <span className="hover:text-white transition-colors cursor-pointer">
-              Terms of Camp Service
-            </span>
+            <a
+              href="https://www.facebook.com/islandcampingbangladesh"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.Instagram.com/islandcampingbangladesh"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#25D366] hover:underline font-bold"
+            >
+              WhatsApp: +8801713880032
+            </a>
             <span className="text-emerald-400 font-semibold">
               Hosted on Hostinger
             </span>

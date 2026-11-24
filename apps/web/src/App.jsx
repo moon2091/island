@@ -10,7 +10,6 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { fetchCampsites, fetchDestinations } from './api/client';
 import { SEED_CAMPSITES } from './data/seedCampsites';
-import { Flame, MessageCircle, PhoneCall } from 'lucide-react';
 
 const STORAGE_WISHLIST_KEY = 'island_camping_wishlist';
 
@@ -155,85 +154,6 @@ export function App() {
         ) : (
           /* Explore / Listings View */
           <div>
-            
-            {/* Hero Section */}
-            <div className="relative z-30 bg-gradient-to-b from-sand-200/90 to-sand-100 pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-sand-300">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
-                
-                {/* Pill Tag */}
-                <a
-                  href="#winter-eco-tour"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById('winter-eco-tour');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-campfire/15 hover:bg-campfire/25 border border-campfire/30 text-nature-950 text-xs font-extrabold uppercase tracking-wider mb-5 transition-colors"
-                >
-                  <Flame className="w-4 h-4 text-campfire fill-campfire" />
-                  <span>শীতের বিশেষ ইকো-ট্যুর • Char Montaz → Shonar Char → Char Hare (৳2,500)</span>
-                </a>
-
-                <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-nature-950 tracking-tight max-w-4xl mx-auto leading-[1.2] sm:leading-[1.15]">
-                  Char Hare the Mysterious Island &amp; Shonar Char Eco-Tour
-                </h1>
-
-                <p className="mt-4 text-sm sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-                  শীতের বিশেষ অল-ইনক্লুসিভ ইকো-ট্যুর মাত্র ২,৫০০ টাকায়! চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে চরতাপুসী, চর কুসুম, চর আন্ডা ও সোনারচর হয়ে চর হেয়ারে প্রিমিয়াম তাঁবুতে রাত্রিযাপন, ৫ বেলার রাজকীয় খাবার ও বারবিকিউ নাইট।
-                </p>
-
-                {/* Direct Hero CTAs */}
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <button
-                    onClick={() => {
-                      const charHareCamp =
-                        campsites.find((c) => c.slug === 'char-hare-mysterious-island') ||
-                        SEED_CAMPSITES[0];
-                      setBookingPayload({
-                        campsite: charHareCamp,
-                        packageType: 'all_inclusive',
-                        checkIn: checkInDate || new Date().toISOString().split('T')[0],
-                        checkOut:
-                          checkOutDate ||
-                          new Date(Date.now() + 86400000).toISOString().split('T')[0],
-                        guests: guestsCount || 2,
-                        nights: 1,
-                        selectedAddons: [],
-                        totalBdt: 2500 * (guestsCount || 2),
-                      });
-                    }}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-campfire hover:bg-campfire-hover text-white rounded-full font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95"
-                  >
-                    <Flame className="w-4 h-4 fill-white" />
-                    <span>Book Winter Eco-Tour (৳2,500)</span>
-                  </button>
-
-                  <a
-                    href="https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20want%20to%20book%20the%20Winter%20Special%20Eco-Tour%20(Char%20Montaz%20-%20Shonar%20Char%20-%20Char%20Hare%2C%20%E0%A7%B32%2C500)."
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full sm:w-auto px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-full font-black text-sm flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95"
-                  >
-                    <MessageCircle className="w-4 h-4 fill-emerald-950" />
-                    <span>WhatsApp: +8801713880032</span>
-                  </a>
-
-                  <a
-                    href="tel:+8801719368178"
-                    className="w-full sm:w-auto px-5 py-3.5 bg-white hover:bg-sand-200 text-nature-950 border border-sand-300 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
-                  >
-                    <PhoneCall className="w-4 h-4 text-nature-800" />
-                    <span>Guide Aiub Khan: 01719368178</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Decorative Subtle Background Circles (isolated overflow-hidden so search popover is never clipped) */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-100/30 blur-3xl rounded-full" />
-              </div>
-            </div>
-
             {/* Flagship Winter Special Eco-Tour Spotlight */}
             <WinterEcoTour
               currency={currency}

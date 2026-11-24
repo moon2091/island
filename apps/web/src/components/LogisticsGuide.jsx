@@ -4,8 +4,14 @@ import { DESTINATIONS } from '../data/seedCampsites';
 
 export function LogisticsGuide({ onClose }) {
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-sand-50 rounded-2xl sm:rounded-3xl max-w-3xl w-full p-4 sm:p-8 shadow-2xl border border-sand-300 relative my-6 sm:my-8 animate-in fade-in zoom-in-95 duration-200">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-sand-50 rounded-2xl sm:rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto p-5 sm:p-8 shadow-2xl border border-sand-300 relative animate-in fade-in zoom-in-95 duration-200"
+      >
         
         {/* Close Button */}
         <button

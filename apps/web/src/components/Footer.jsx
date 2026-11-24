@@ -184,7 +184,16 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                   className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
-                  <span>WhatsApp: +8801713880032</span>
+                  <span>WhatsApp Business: +8801713880032</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+8801719368178"
+                  className="text-campfire-sunset hover:text-white font-bold flex items-center gap-1.5"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Local Guide Aiub Khan: 01719368178</span>
                 </a>
               </li>
               <li>
@@ -199,23 +208,23 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
             </ul>
           </div>
 
-          {/* Col 4: Official WhatsApp Business & Booking Queries */}
+          {/* Col 4: Official WhatsApp Business & Local Guide */}
           <div className="space-y-3">
             <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">
-              Official Booking & Queries
+              Official Booking &amp; Local Guide
             </h4>
 
             {/* WhatsApp Business Card */}
             <div className="p-4 rounded-2xl bg-gradient-to-br from-nature-900 to-emerald-950/80 border border-emerald-800/60 shadow-lg space-y-2.5">
               <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wide">
                 <MessageCircle className="w-4 h-4 text-[#25D366] fill-[#25D366]" />
-                <span>WhatsApp Business Desk</span>
+                <span>WhatsApp Business (Booking)</span>
               </div>
               <div className="text-sm font-extrabold text-white tracking-tight">
                 +8801713880032
               </div>
               <p className="text-[11px] text-emerald-200/90 leading-snug">
-                যেকোনো বুকিং নিশ্চিতকরণ (Order Confirmation), বিস্তারিত তথ্য ও নৌকার শিডিউল জানতে সরাসরি WhatsApp এ যোগাযোগ করুন।
+                যেকোনো বুকিং নিশ্চিতকরণ ও তথ্যের জন্য WhatsApp করুন। লোকাল গাইড আইয়ুব খান: <a href="tel:+8801719368178" className="text-white font-bold underline">01719368178</a>
               </p>
               <a
                 href={whatsappUrl}

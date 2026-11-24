@@ -60,11 +60,135 @@ export const CATEGORIES = [
   { id: "glamping", name: "Kuakata Glamping", icon: "Sparkles" },
 ];
 
+export const WINTER_ECO_TOUR = {
+  id: "winter-eco-tour-char-hare",
+  badge: "শীতের বিশেষ ইকো-ট্যুর • Winter Special",
+  title: "শীতের বিশেষ ইকো-ট্যুর: চরমোন্তাজ থেকে সোনারচর ও চর হেয়ার এডভেঞ্চার!",
+  en_title: "Winter Special Eco-Tour: Char Montaz to Shonar Char & Char Hare Adventure",
+  price: 2500,
+  price_label: "২,৫০০ টাকা (প্রতি জন)",
+  duration: "২ দিন ১ রাত (All-Inclusive)",
+  route_stops: [
+    "চরমোন্তাজ লঞ্চঘাট",
+    "চরতাপুসী",
+    "চর কুসুম",
+    "চর আন্ডা",
+    "সোনারচর",
+    "চর হেয়ার"
+  ],
+  contacts: {
+    whatsapp_number: "+8801713880032",
+    whatsapp_label: "WhatsApp Business (Booking & Queries)",
+    guide_name: "Aiub Khan (আইয়ুব খান)",
+    guide_role: "Local Guide — Contact for Any Queries",
+    guide_phone: "01719368178"
+  },
+  itinerary: [
+    {
+      day: "দিন ১",
+      step: 1,
+      title: "সকালের যাত্রা",
+      detail: "চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে করে যাত্রা শুরু।"
+    },
+    {
+      day: "দিন ১",
+      step: 2,
+      title: "যাত্রাপথে প্রাকৃতিক দৃশ্য",
+      detail: "ট্রলারে বসে উপভোগ করবেন চরতাপুসী, চর কুসুম, চর আন্ডা এবং সোনারচরের ক্যানেল ও চ্যানেলের অপরূপ সৌন্দর্য।"
+    },
+    {
+      day: "দিন ১",
+      step: 3,
+      title: "বন্যপ্রাণী ও পাখির কলকাকলি",
+      detail: "ম্যানগ্রোভ বনের পাশ দিয়ে যাওয়ার সময় দেখা মিলবে অসংখ্য দেশি ও পরিযায়ী পাখির। ভাগ্য ভালো থাকলে খাল পাড়ে হরিণ ও বুনো মহিষের দেখা পেতে পারেন!"
+    },
+    {
+      day: "দিন ১",
+      step: 4,
+      title: "সোনারচর ও বন বিভাগ অফিস",
+      detail: "সোনারচর চ্যানেল ধরে বন বিভাগ অফিস এলাকা অতিক্রম করে সোনারচর বিচে পৌঁছানো এবং ১ ঘণ্টার রিফ্রেশমেন্ট বিরতি।"
+    },
+    {
+      day: "দিন ১",
+      step: 5,
+      title: "চর হেয়ারে অবতরণ ও বিকেলের আনন্দ",
+      detail: "চর হেয়ারে নেমে সৈকতে ফুটবল খেলা, সাগরের জলে গোসল এবং ইচ্ছেমতো ভ্রমণ। বিকেলে বালুচরে লাল কাঁকড়ার ছোটাছুটি দেখা ও বনের ভেতরে ঘুরে দেখা।"
+    },
+    {
+      day: "দিন ১",
+      step: 6,
+      title: "সূর্যাস্ত ও বারবিকিউ নাইট",
+      detail: "সন্ধ্যায় বিচে চোখ জুড়ানো সূর্যাস্ত উপভোগ। সন্ধ্যা নামলে ক্যাম্পসাইটে ফেরা, বারবিকিউ নাইট, ফায়ারক্যাম্প এবং তারার নিচে তাঁবুতে রাত্রিযাপন।"
+    },
+    {
+      day: "দিন ২",
+      step: 7,
+      title: "দ্বিতীয় দিন ও সূর্যোদয়",
+      detail: "সকালে ঘুম থেকে উঠে মোহনীয় সূর্যোদয় দর্শন, চরে চরে বেড়ানো মহিষ ও ভেড়ার পাল দেখা।"
+    },
+    {
+      day: "দিন ২",
+      step: 8,
+      title: "ফিরতি যাত্রা",
+      detail: "সকালে রাজকীয় নাস্তা শেষে নিজস্ব সময় কাটানো। সকাল ১১:০০ টায় ট্রলারে করে চরমোন্তাজ ঘাটের উদ্দেশ্যে যাত্রা এবং ঘাটে পৌঁছে সুন্দর স্মৃতি নিয়ে ট্যুর সমাপ্তি।"
+    }
+  ],
+  royal_menu: [
+    {
+      slot: "যাত্রার শুরুতে",
+      en_slot: "Welcome Snacks",
+      items: ["হালকা স্ন্যাকস"]
+    },
+    {
+      slot: "দুপুরের খাবার",
+      en_slot: "Royal Island Lunch",
+      items: [
+        "দেশী লাল চালের ভাত",
+        "দেশি ভর্তা ও ভাজি",
+        "তাজা সামুদ্রিক মাছ (২টি আইটেম)",
+        "দেশি মুরগি / হাঁসের মাংস",
+        "পাতলা ডাল"
+      ]
+    },
+    {
+      slot: "সন্ধ্যা ও রাতের বারবিকিউ",
+      en_slot: "Evening & Night BBQ",
+      items: ["তাজা চিকেন বারবিকিউ", "গরম রুটি / পরোটা"]
+    },
+    {
+      slot: "রাতের প্রধান খাবার",
+      en_slot: "Main Night Dinner",
+      items: ["গরম ভাত", "তাজা মাছের তরকারি", "ডাল"]
+    },
+    {
+      slot: "দ্বিতীয় দিন সকালের নাস্তা",
+      en_slot: "Day 2 Royal Breakfast",
+      items: [
+        "ডিম খিচুড়ি / ঐতিহ্যবাহী ইলিশ খিচুড়ি",
+        "অথবা নরম পরোটা ও ডিম ভাজি"
+      ]
+    }
+  ],
+  packing_notice: "বিদ্যুৎ নেই (সৌর বিদ্যুতের সুবিধা রয়েছে)। তাই প্রস্তুতি নিয়ে আসা জরুরি।",
+  packing_items: [
+    "ব্যক্তিগত ওষুধ (অবশ্যই সাথে রাখবেন)",
+    "পাওয়ার ব্যাংক ও চার্জার",
+    "শীতের কাপড় / জ্যাকেট ও ক্যাপ",
+    "টর্চলাইট ও হালকা তোয়ালে"
+  ],
+  inclusions: [
+    "চরমোন্তাজ – সোনারচর – চর হেয়ার যাতায়াতের ট্রলার ভাড়া",
+    "সব বেলার মানসম্মত খাবার (১টি স্ন্যাকস, ১টি প্রিমিয়াম বারবিকিউ, ২টি প্রধান খাবার ও ১টি নাস্তা)",
+    "প্রিমিয়াম তাঁবুতে রাত্রিযাপন (Tent Stay)",
+    "অভিজ্ঞ লোকাল গাইড (আইয়ুব খান) ও ক্যাম্পিং সহায়তা"
+  ]
+};
+
 export const SEED_CAMPSITES = [
   {
     id: 1,
-    title: "Char Hare the Mysterious Island - Watchtower & Beach Camp",
-    bn_title: "চর হেয়ার দ্য মিস্টেরিয়াস আইল্যান্ড - ওয়াচ টাওয়ার ও বিচ ক্যাম্প",
+    title: "Char Hare the Mysterious Island - Winter Eco-Tour & Beach Camp",
+    bn_title: "শীতের বিশেষ ইকো-ট্যুর: চরমোন্তাজ – সোনারচর – চর হেয়ার এডভেঞ্চার",
     slug: "char-hare-mysterious-island",
     destination_id: 1,
     destination: {
@@ -72,57 +196,56 @@ export const SEED_CAMPSITES = [
       name: "Char Heyar",
       bn_name: "চর হেয়ার",
       district: "Patuakhali (Rangabali)",
-      ghat_name: "Char Montaz Ghat / Koralia Launch Ghat"
+      ghat_name: "Char Montaz Launch Ghat"
     },
     category: "Char Heyar Camps",
-    price_per_night: 1500,
-    special_package_price: 2000,
-    capacity: 4,
-    description: "নীরবে নিভৃতে তাবুতে থেকে বঙ্গোপসাগরের উত্তাল সমুদ্র, অনন্ত বালিয়াড়ি, কোটি লাল কাঁকড়া, এবং ঝাউগাছের অকৃত্তিম সৌন্দর্য অবলোকনের জন্য Char Hare the Mysterious Island (চর হেয়ার)-এর সুসজ্জিত আউটডোর ক্যাম্প সাইট। দ্বীপের একমাত্র কাঠের ওয়াচ টাওয়ার থেকে পুরো সমুদ্র ও সৈকত অবলোকন সম্ভব। রয়েছে নিজস্ব কিচেন, ৩টি পরিষ্কার ওয়াশরুম, ২টি মিষ্টি পানির টিউবওয়েল, এবং রাতে নিরাপত্তার জন্য সার্বক্ষণিক নাইট গার্ড।",
-    who_can_come: "যারা নীরবে নিভৃতে তাবুতে থেকে সমুদ্র, বালিয়াড়ি, লাল কাঁকড়া, বনের সৌন্দর্য ও ঝাউগাছের অকৃত্রিম রূপ দেখতে ভালোবাসেন। প্রকৃতি ও সমুদ্রের প্রেমে যাদের মন শান্ত হয়।",
-    who_not_suited: "যাদের খুঁতখুঁতে স্বভাব, আউটডোরে ক্যাম্পিং করার অভিজ্ঞতা বা ধারণা নেই, এবং বিলাসবহুল পাঁচ তারকা হোটেলের মানসিকতা নিয়ে দ্বীপে আসতে চান—তাদের জন্য নয়।",
+    price_per_night: 2500,
+    all_inclusive: true,
+    capacity: 10,
+    description: "শীতের বিশেষ অল-ইনক্লুসিভ ইকো-ট্যুর! চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে চরতাপুসী, চর কুসুম, চর আন্ডা ও সোনারচর চ্যানেল হয়ে সোনারচর বিচে রিফ্রেশমেন্ট এবং চর হেয়ারে প্রিমিয়াম তাঁবুতে রাত্রিযাপন। থাকছে লাল কাঁকড়ার সৈকত, ফুটবল, সূর্যাস্ত-সূর্যোদয়, ফায়ারক্যাম্প, ৫ বেলার রাজকীয় খাবার (লাল চালের ভাত, ২ পদ সামুদ্রিক মাছ, দেশি মুরগি/হাঁস, চিকেন বারবিকিউ ও ইলিশ/ডিম খিচুড়ি) এবং অভিজ্ঞ লোকাল গাইড আইয়ুব খানের সার্বক্ষণিক সহায়তা।",
+    who_can_come: "যারা নীরবে নিভৃতে তাবুতে থেকে সমুদ্র, বালিয়াড়ি, লাল কাঁকড়া, ম্যানগ্রোভ বনের হরিণ-পাখি ও ঝাউগাছের অকৃত্রিম রূপ দেখতে ভালোবাসেন। প্রকৃতি ও সমুদ্রের প্রেমে যাদের মন শান্ত হয়।",
+    who_not_suited: "যাদের খুঁতখুঁতে স্বভাব, আউটডোরে ক্যাম্পিং করার অভিজ্ঞতা বা ধারণা নেই, এবং বিলাসবহুল পাঁচ তারকা হোটেলের মানসিকতা নিয়ে দ্বীপে আসতে চান—তাদের জন্য নয়। (দ্বীপে গ্রিড বিদ্যুৎ নেই, সৌর বিদ্যুতের সুবিধা রয়েছে।)",
     meal_plan: {
-      lunch: "ভাত + সামুদ্রিক মাছ / ব্রয়লার চিকেন + ২ পদ তাজা ভর্তা + ডাল (দুপুর ২:০০-৩:০০)",
-      afternoon: "মুড়ি মাখা (চানাচুর + খাঁটি সরিষার তেলে মুড়ি) (বিকাল ৬:০০-৮:০০)",
-      dinner_bbq: "চিকেন / তাজা কোড়াল অথবা সামুদ্রিক মাছ বার্বিকিউ + ৩টি গরম রুটি/পরোটা + স্পেশাল সস + সালাদ (রাত ১০:০০-১১:০০)",
-      breakfast: "ঝরঝরে ভুনা খিচুড়ি + ডিম + মরিচ ভর্তা + আলু ভর্তা + সালাদ"
+      start_snacks: "যাত্রার শুরুতে: হালকা স্ন্যাকস",
+      lunch: "দেশী লাল চালের ভাত + দেশি ভর্তা ও ভাজি + তাজা সামুদ্রিক মাছ (২টি আইটেম) + দেশি মুরগি / হাঁসের মাংস + পাতলা ডাল",
+      dinner_bbq: "সন্ধ্যা ও রাতের বারবিকিউ: তাজা চিকেন বারবিকিউ + গরম রুটি / পরোটা",
+      main_dinner: "রাতের প্রধান খাবার: গরম ভাত + তাজা মাছের তরকারি + ডাল",
+      breakfast: "দ্বিতীয় দিন সকালের নাস্তা: ডিম খিচুড়ি / ঐতিহ্যবাহী ইলিশ খিচুড়ি অথবা নরম পরোটা ও ডিম ভাজি"
     },
-    special_package_perks: "দুপুরে চিকেন ও মাছ দুটোই পরিবেশন করা হয়। রাত ৮:০০-৯:০০ টায় একটি অতিরিক্ত পূর্ণাঙ্গ ডিনার (দুপুরের মেন্যুর মত) পরিবেশিত হয়।",
     amenities: [
+      "Char Montaz – Shonar Char – Char Hare Round-Trip Trawler Included",
+      "All 5 Royal Meals Included (Snacks, Lunch, BBQ, Main Dinner, Breakfast)",
+      "Premium Tent Stay with Pillows, Foam & Warm Blankets",
+      "Experienced Local Guide Aiub Khan (01719368178) & Crew",
       "Island's Only Wooden Watch Tower",
-      "Pillows, Foam Mattress & Warm Blankets",
-      "All 4 Meals Included (Lunch, Evening Muri, BBQ Dinner, Breakfast)",
-      "3 Clean Low-Commode Washrooms",
-      "2 Tube-Wells for Sweet Drinking Water",
-      "3 Large Wooden Machangs (Lounging Decks)",
-      "40+ Quality Canvas Tents & 30+ Hammocks",
-      "Beach Chairs, Umbrellas & Wooden Beach Swings",
-      "Ukulele, Cajon, Hand Buoys & Acoustic Soundbox",
-      "Football & Volleyball on Sandbar",
-      "24/7 Dedicated 5-Person Island Crew",
+      "Solar Electricity Facility (Off-Grid Eco Power)",
+      "3 Clean Low-Commode Washrooms & 2 Sweet Water Tube-Wells",
+      "3 Large Wooden Machangs, 40+ Tents & 30+ Hammocks",
+      "Beach Football, Volleyball, Swings & Acoustic Music",
+      "Campfire, BBQ Night & Stargazing",
       "Nighttime Security Guard Patrol",
-      "Campfire & Acoustic Bonfire Area",
       "Zero Crowd - Private Beach Feel"
     ],
     images: [
+      "/images/winter-ecotour-hero.jpg",
+      "/images/winter-ecotour-poster.jpg",
       "/images/char-heyar-watchtower.jpg",
       "/images/char-heyar-red-crabs.jpg",
-      "/images/char-heyar-tents.jpg",
-      "/images/char-heyar-campfire.jpg",
       "/images/seafood-bbq.jpg"
     ],
-    rating: 4.95,
-    review_count: 56,
+    rating: 4.98,
+    review_count: 68,
     instant_book: true,
-    host_name: "Camp Master Shumon & Island Crew",
+    host_name: "Local Guide Aiub Khan & Island Crew",
     host_phone: "+8801713880032",
-    host_badge: "Verified Char Heyar Island Guardian",
-    ghat_info: "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / reserve speedboat drop-off directly at Char Heyar sandbar",
-    boat_schedule: "Dhaka Sadarghat launch to Char Montaz leaves 5:30 PM daily. Trawlers to Char Heyar wait for launch passengers at Char Montaz ghat.",
+    local_guide_phone: "01719368178",
+    host_badge: "Verified Local Guide & Island Guardian",
+    ghat_info: "Char Montaz Launch Ghat → Char Tapushi → Char Kusum → Char Anda → Shonar Char → Char Hare (Trawler Included)",
+    boat_schedule: "Morning trawler departs Char Montaz Launch Ghat through Shonar Char channel to Char Hare. Return trawler departs Char Hare at 11:00 AM next day.",
     rules: [
-      "এটি একটি নির্জন দ্বীপ, বাজার-হাট নেই—অনেক সময়ই প্রাকৃতিক কারণে মেন্যু সামান্য পরিবর্তিত হতে পারে।",
+      "বিদ্যুৎ নেই (সৌর বিদ্যুতের সুবিধা রয়েছে)—তাই ব্যক্তিগত ওষুধ ও পাওয়ার ব্যাংক সাথে নিয়ে আসা জরুরি।",
       "দ্বীপে কোনো প্রকার প্লাস্টিক বা আবর্জনা ফেলা সম্পূর্ণ নিষিদ্ধ (Leave No Trace)।",
-      "দ্বীপে অযথা কোলাহল না করে প্রকৃতির নির্জনতার সাথে মানিয়ে নেওয়ার অনুরোধ রইলো।"
+      "এটি একটি নির্জন দ্বীপ—প্রাকৃতিক কারণে মেন্যু বা জোয়ার-ভাটার সময়সূচি সামান্য পরিবর্তিত হতে পারে।"
     ]
   },
   {

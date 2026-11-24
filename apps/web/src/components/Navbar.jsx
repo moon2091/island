@@ -55,6 +55,22 @@ export function Navbar({
             {/* 2. Center: Desktop Navigation Links (Clean, single-line, visible on XL screens) */}
             <nav className="hidden xl:flex items-center gap-1 2xl:gap-2">
               <a
+                href="#winter-eco-tour"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigateHome();
+                  setTimeout(() => {
+                    const el = document.getElementById('winter-eco-tour');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
+                className="text-campfire hover:text-campfire-hover bg-campfire/10 hover:bg-campfire/15 text-xs 2xl:text-sm font-extrabold flex items-center gap-1.5 transition-colors py-2 px-3 rounded-lg whitespace-nowrap shrink-0"
+              >
+                <Flame className="w-4 h-4 fill-campfire shrink-0" />
+                <span>Winter Tour (৳2,500)</span>
+              </a>
+
+              <a
                 href="#travel-vlogs"
                 onClick={(e) => {
                   e.preventDefault();
@@ -163,7 +179,33 @@ export function Navbar({
               className="w-full flex items-center justify-center gap-2 py-3 text-xs font-black text-emerald-950 bg-[#25D366] hover:bg-[#20ba59] rounded-xl shadow-sm transition-colors"
             >
               <MessageCircle className="w-4 h-4 fill-emerald-950" />
-              <span>Direct Booking & Query: +8801713880032</span>
+              <span>WhatsApp Business: +8801713880032</span>
+            </a>
+
+            {/* Local Guide Aiub Khan Mobile Call */}
+            <a
+              href="tel:+8801719368178"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold text-nature-950 bg-sand-200 hover:bg-sand-300 rounded-xl border border-sand-300 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4 text-nature-800" />
+              <span>Local Guide Aiub Khan: 01719368178</span>
+            </a>
+
+            <a
+              href="#winter-eco-tour"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome();
+                setMobileMenuOpen(false);
+                setTimeout(() => {
+                  const el = document.getElementById('winter-eco-tour');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="w-full text-left flex items-center gap-2.5 py-2 text-campfire font-extrabold"
+            >
+              <Flame className="w-5 h-5 fill-campfire" />
+              <span>শীতের বিশেষ ইকো-ট্যুর (৳2,500 All-Inclusive)</span>
             </a>
 
             <a

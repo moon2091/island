@@ -8,9 +8,11 @@ import { BookingModal } from './components/BookingModal';
 import { LogisticsGuide } from './components/LogisticsGuide';
 import { FeaturedVideos } from './components/FeaturedVideos';
 import { TravelArticles } from './components/TravelArticles';
+import { WinterEcoTour } from './components/WinterEcoTour';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { fetchCampsites, fetchDestinations } from './api/client';
+import { SEED_CAMPSITES } from './data/seedCampsites';
 import { Sparkles, MapPin, Compass, Flame, Filter, Heart } from 'lucide-react';
 
 const STORAGE_WISHLIST_KEY = 'island_camping_wishlist';
@@ -162,17 +164,25 @@ export function App() {
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                 
                 {/* Pill Tag */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nature-100 border border-nature-200 text-nature-900 text-xs font-extrabold uppercase tracking-wider mb-5">
-                  <Flame className="w-4 h-4 text-campfire" />
-                  <span>The Hipcamp of Bangladesh Islands</span>
-                </div>
+                <a
+                  href="#winter-eco-tour"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('winter-eco-tour');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-campfire/15 hover:bg-campfire/25 border border-campfire/30 text-nature-950 text-xs font-extrabold uppercase tracking-wider mb-5 transition-colors"
+                >
+                  <Flame className="w-4 h-4 text-campfire fill-campfire" />
+                  <span>শীতের বিশেষ ইকো-ট্যুর • Char Montaz → Shonar Char → Char Hare (৳2,500)</span>
+                </a>
 
                 <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-nature-950 tracking-tight max-w-4xl mx-auto leading-[1.2] sm:leading-[1.15]">
-                  Pitch Your Tent Under the Stars on Char Hare & Southern Islands
+                  Char Hare the Mysterious Island &amp; Shonar Char Eco-Tour
                 </h1>
 
                 <p className="mt-4 text-sm sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-                  Discover beachfront dome tents with wooden watchtowers, millions of red crabs, pristine mangrove wilderness, and indigenous Manta community boat life across Char Hare, Shonar Char, Char Montaz, Jahaj Mara, and Kuakata.
+                  শীতের বিশেষ অল-ইনক্লুসিভ ইকো-ট্যুর মাত্র ২,৫০০ টাকায়! চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে চরতাপুসী, চর কুসুম, চর আন্ডা ও সোনারচর হয়ে চর হেয়ারে প্রিমিয়াম তাঁবুতে রাত্রিযাপন, ৫ বেলার রাজকীয় খাবার ও বারবিকিউ নাইট।
                 </p>
 
                 {/* Floating Hipcamp Search Bar */}
@@ -202,6 +212,28 @@ export function App() {
             <CategoryPills
               selectedCategory={selectedCategory}
               onSelectCategory={setSelectedCategory}
+            />
+
+            {/* Flagship Winter Special Eco-Tour Spotlight */}
+            <WinterEcoTour
+              currency={currency}
+              onBookTour={() => {
+                const charHareCamp =
+                  campsites.find((c) => c.slug === 'char-hare-mysterious-island') ||
+                  SEED_CAMPSITES[0];
+                setBookingPayload({
+                  campsite: charHareCamp,
+                  packageType: 'all_inclusive',
+                  checkIn: checkInDate || new Date().toISOString().split('T')[0],
+                  checkOut:
+                    checkOutDate ||
+                    new Date(Date.now() + 86400000).toISOString().split('T')[0],
+                  guests: guestsCount || 2,
+                  nights: 1,
+                  selectedAddons: [],
+                  totalBdt: 2500 * (guestsCount || 2),
+                });
+              }}
             />
 
             {/* Campsites Grid Section */}

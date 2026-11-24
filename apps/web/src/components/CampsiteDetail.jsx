@@ -28,6 +28,7 @@ import {
   AlertCircle,
   Check,
   MessageCircle,
+  PhoneCall,
 } from 'lucide-react';
 import { ADDONS_LIST } from '../data/seedCampsites';
 
@@ -70,14 +71,15 @@ export function CampsiteDetail({
   const nights = calculateNights();
 
   // Price calculations
-  const perPersonPerNight = packageType === 'special'
-    ? (campsite.special_package_price || 2000)
-    : (campsite.price_per_night || 1500);
+  const hasSpecialTier = !campsite.all_inclusive && Boolean(campsite.special_package_price);
+  const perPersonPerNight = hasSpecialTier && packageType === 'special'
+    ? campsite.special_package_price
+    : (campsite.price_per_night || 2500);
 
   const basePriceBdt = perPersonPerNight * guests * nights;
 
   let addonsTotalBdt = 0;
-  if (selectedAddons.special_meal && packageType !== 'special') {
+  if (selectedAddons.special_meal && hasSpecialTier && packageType !== 'special') {
     addonsTotalBdt += 500 * guests * nights;
   }
   if (selectedAddons.manta_boat) {
@@ -291,13 +293,17 @@ export function CampsiteDetail({
               </div>
             </div>
 
-            {/* Daily Authentic 4-Meal Plan Breakdown */}
+            {/* Daily Authentic Meal Plan Breakdown */}
             {campsite.meal_plan && (
               <div className="bg-white rounded-2xl border border-sand-300 p-6 shadow-sm">
-                <div className="flex items-center justify-between pb-4 border-b border-sand-300 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-sand-300 mb-5">
                   <div className="flex items-center gap-2 text-nature-950 font-extrabold text-lg">
                     <Utensils className="w-5 h-5 text-campfire" />
-                    <span>খাবারের বিস্তারিত মেন্যু (4-Meal Plan Included)</span>
+                    <span>
+                      {campsite.meal_plan.main_dinner
+                        ? 'রাজকীয় খাবারের মেনু (All 5 Meals Included)'
+                        : 'খাবারের বিস্তারিত মেন্যু (All Meals Included)'}
+                    </span>
                   </div>
                   <span className="text-xs font-bold text-nature-800 bg-sand-200 px-3 py-1 rounded-full">
                     প্যাকেজের অন্তর্ভুক্ত
@@ -305,41 +311,71 @@ export function CampsiteDetail({
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
-                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
-                      (১) দুপুর (২:০০ - ৩:০০ টা)
-                    </span>
-                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
-                      {campsite.meal_plan.lunch}
-                    </p>
-                  </div>
+                  {campsite.meal_plan.start_snacks && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        (১) যাত্রার শুরুতে (Welcome Snacks)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.start_snacks}
+                      </p>
+                    </div>
+                  )}
 
-                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
-                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
-                      (২) বিকাল (৬:০০ - ৮:০০ টা)
-                    </span>
-                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
-                      {campsite.meal_plan.afternoon}
-                    </p>
-                  </div>
+                  {campsite.meal_plan.lunch && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        দুপুরের খাবার (Royal Lunch)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.lunch}
+                      </p>
+                    </div>
+                  )}
 
-                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
-                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
-                      (৩) রাত (১০:০০ - ১১:০০ টা)
-                    </span>
-                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
-                      {campsite.meal_plan.dinner_bbq}
-                    </p>
-                  </div>
+                  {campsite.meal_plan.afternoon && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        বিকালের নাস্তা (Evening Snack)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.afternoon}
+                      </p>
+                    </div>
+                  )}
 
-                  <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
-                    <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
-                      (৪) সকালের নাস্তা
-                    </span>
-                    <p className="text-xs text-stone-800 font-medium leading-relaxed">
-                      {campsite.meal_plan.breakfast}
-                    </p>
-                  </div>
+                  {campsite.meal_plan.dinner_bbq && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        সন্ধ্যা ও রাতের বারবিকিউ (BBQ Night)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.dinner_bbq}
+                      </p>
+                    </div>
+                  )}
+
+                  {campsite.meal_plan.main_dinner && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        রাতের প্রধান খাবার (Main Dinner)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.main_dinner}
+                      </p>
+                    </div>
+                  )}
+
+                  {campsite.meal_plan.breakfast && (
+                    <div className="p-3.5 bg-sand-100 rounded-xl border border-sand-300">
+                      <span className="text-[11px] font-bold text-campfire uppercase tracking-wider block mb-1">
+                        সকালের নাস্তা (Day 2 Breakfast)
+                      </span>
+                      <p className="text-xs text-stone-800 font-medium leading-relaxed">
+                        {campsite.meal_plan.breakfast}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {campsite.special_package_perks && (
@@ -473,45 +509,65 @@ export function CampsiteDetail({
           <div className="lg:col-span-1">
             <div className="sticky top-28 bg-white rounded-3xl p-6 border border-sand-300 shadow-float">
               
-              {/* Package Selector (Regular ৳1500 vs Special ৳2000) */}
-              <div className="mb-5">
-                <span className="text-xs font-bold text-stone-500 uppercase tracking-wider block mb-2">
-                  Select Package (প্যাকেজ নির্বাচন)
-                </span>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setPackageType('regular')}
-                    className={`p-3 rounded-2xl border text-left transition-all ${
-                      packageType === 'regular'
-                        ? 'bg-nature-50 border-nature-900 ring-2 ring-nature-900/10'
-                        : 'bg-white border-sand-300 hover:border-stone-400'
-                    }`}
-                  >
-                    <div className="text-xs font-bold text-stone-900">Regular Package</div>
-                    <div className="text-base font-extrabold text-nature-950 mt-0.5">
-                      {formatPrice(campsite.price_per_night || 1500)}
-                    </div>
-                    <div className="text-[10px] text-stone-500">4 Meals + Tent + Foam</div>
-                  </button>
+              {/* Package Selector or All-Inclusive Winter Eco-Tour Banner */}
+              {hasSpecialTier ? (
+                <div className="mb-5">
+                  <span className="text-xs font-bold text-stone-500 uppercase tracking-wider block mb-2">
+                    Select Package (প্যাকেজ নির্বাচন)
+                  </span>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setPackageType('regular')}
+                      className={`p-3 rounded-2xl border text-left transition-all ${
+                        packageType === 'regular'
+                          ? 'bg-nature-50 border-nature-900 ring-2 ring-nature-900/10'
+                          : 'bg-white border-sand-300 hover:border-stone-400'
+                      }`}
+                    >
+                      <div className="text-xs font-bold text-stone-900">Regular Package</div>
+                      <div className="text-base font-extrabold text-nature-950 mt-0.5">
+                        {formatPrice(campsite.price_per_night || 1500)}
+                      </div>
+                      <div className="text-[10px] text-stone-500">All Meals + Tent + Foam</div>
+                    </button>
 
-                  <button
-                    type="button"
-                    onClick={() => setPackageType('special')}
-                    className={`p-3 rounded-2xl border text-left transition-all ${
-                      packageType === 'special'
-                        ? 'bg-amber-50 border-campfire-amber ring-2 ring-campfire-amber/20'
-                        : 'bg-white border-sand-300 hover:border-stone-400'
-                    }`}
-                  >
-                    <div className="text-xs font-bold text-stone-900">Special Package</div>
-                    <div className="text-base font-extrabold text-campfire-amber mt-0.5">
-                      {formatPrice(campsite.special_package_price || 2000)}
-                    </div>
-                    <div className="text-[10px] text-stone-500">Both Chicken & Fish + Extra Dinner</div>
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => setPackageType('special')}
+                      className={`p-3 rounded-2xl border text-left transition-all ${
+                        packageType === 'special'
+                          ? 'bg-amber-50 border-campfire-amber ring-2 ring-campfire-amber/20'
+                          : 'bg-white border-sand-300 hover:border-stone-400'
+                      }`}
+                    >
+                      <div className="text-xs font-bold text-stone-900">Special Package</div>
+                      <div className="text-base font-extrabold text-campfire-amber mt-0.5">
+                        {formatPrice(campsite.special_package_price)}
+                      </div>
+                      <div className="text-[10px] text-stone-500">Both Chicken &amp; Fish + Extra Dinner</div>
+                    </button>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mb-5 p-4 rounded-2xl bg-gradient-to-br from-nature-900 to-emerald-950 text-white shadow-sm">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-campfire-sunset">
+                      All-Inclusive Eco-Tour Package
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500 text-emerald-950 text-[10px] font-black">
+                      ALL INCLUDED
+                    </span>
+                  </div>
+                  <div className="text-2xl font-black">
+                    {formatPrice(campsite.price_per_night || 2500)}
+                    <span className="text-xs font-semibold text-sand-300 ml-1">/ প্রতি জন (per person)</span>
+                  </div>
+                  <div className="text-[11px] text-sand-200 mt-1">
+                    ট্রলার ভাড়া + ৫ বেলার রাজকীয় খাবার + প্রিমিয়াম তাঁবু + গাইড আইয়ুব খান
+                  </div>
+                </div>
+              )}
 
               {/* Booking Inputs */}
               <div className="space-y-4 mb-6">
@@ -575,7 +631,7 @@ export function CampsiteDetail({
                   </div>
                   <div className="space-y-2">
                     {ADDONS_LIST.map((addon) => {
-                      if (addon.id === 'special_meal' && packageType === 'special') return null;
+                      if (addon.id === 'special_meal' && (!hasSpecialTier || packageType === 'special')) return null;
                       return (
                         <div
                           key={addon.id}
@@ -635,7 +691,11 @@ export function CampsiteDetail({
                 )}
 
                 <div className="flex justify-between text-emerald-700">
-                  <span>All 4 Meals (Lunch, Snack, BBQ, Breakfast)</span>
+                  <span>
+                    {campsite.all_inclusive
+                      ? 'Trawler + All 5 Royal Meals + Guide'
+                      : 'All Meals (Lunch, Snack, BBQ, Breakfast)'}
+                  </span>
                   <span className="font-bold">INCLUDED</span>
                 </div>
 
@@ -664,11 +724,20 @@ export function CampsiteDetail({
                 className="w-full mt-2.5 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-2xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98"
               >
                 <MessageCircle className="w-4 h-4 fill-emerald-950 text-emerald-950" />
-                <span>Book / Inquire via WhatsApp (+8801713880032)</span>
+                <span>WhatsApp Business (+8801713880032)</span>
+              </a>
+
+              {/* Local Guide Aiub Khan Direct Contact */}
+              <a
+                href="tel:+8801719368178"
+                className="w-full mt-2.5 py-3 bg-sand-100 hover:bg-sand-200 text-nature-950 border border-sand-300 rounded-2xl font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+              >
+                <PhoneCall className="w-4 h-4 text-nature-800" />
+                <span>Local Guide Aiub Khan: 01719368178</span>
               </a>
 
               <p className="text-center text-[11px] text-stone-500 mt-3">
-                Zero booking fees &bull; Instant order confirmation & queries on WhatsApp (+8801713880032)
+                Booking &amp; Queries: WhatsApp +8801713880032 &bull; Local Guide: 01719368178
               </p>
             </div>
           </div>

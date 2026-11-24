@@ -46,42 +46,40 @@ DESTINATIONS_DATA = [
 
 CAMPSITES_DATA = [
     {
-        "title": "Char Hare the Mysterious Island - Watchtower & Beach Camp",
+        "title": "Char Hare the Mysterious Island - Winter Eco-Tour & Beach Camp",
         "slug": "char-hare-mysterious-island",
         "destination_name": "Char Heyar",
         "category": "Char Heyar Camps",
-        "price_per_night": 1500,
-        "capacity": 4,
-        "description": "নীরবে নিভৃতে তাবুতে থেকে বঙ্গোপসাগরের উত্তাল সমুদ্র, অনন্ত বালিয়াড়ি, কোটি লাল কাঁকড়া, এবং ঝাউগাছের অকৃত্তিম সৌন্দর্য অবলোকনের জন্য Char Hare the Mysterious Island (চর হেয়ার)-এর সুসজ্জিত আউটডোর ক্যাম্প সাইট। দ্বীপের একমাত্র কাঠের ওয়াচ টাওয়ার থেকে পুরো সমুদ্র ও সৈকত অবলোকন সম্ভব। রয়েছে নিজস্ব কিচেন, ৩টি পরিষ্কার ওয়াশরুম, ২টি মিষ্টি পানির টিউবওয়েল, এবং রাতে নিরাপত্তার জন্য সার্বক্ষণিক নাইট গার্ড।",
+        "price_per_night": 2500,
+        "capacity": 10,
+        "description": "শীতের বিশেষ অল-ইনক্লুসিভ ইকো-ট্যুর! চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে চরতাপুসী, চর কুসুম, চর আন্ডা ও সোনারচর চ্যানেল হয়ে সোনারচর বিচে রিফ্রেশমেন্ট এবং চর হেয়ারে প্রিমিয়াম তাঁবুতে রাত্রিযাপন। থাকছে লাল কাঁকড়ার সৈকত, ফুটবল, সূর্যাস্ত-সূর্যোদয়, ফায়ারক্যাম্প, ৫ বেলার রাজকীয় খাবার এবং অভিজ্ঞ লোকাল গাইড আইয়ুব খান (01719368178)-এর সার্বক্ষণিক সহায়তা।",
         "amenities": [
+            "Char Montaz – Shonar Char – Char Hare Round-Trip Trawler Included",
+            "All 5 Royal Meals Included (Snacks, Lunch, BBQ, Main Dinner, Breakfast)",
+            "Premium Tent Stay with Pillows, Foam & Warm Blankets",
+            "Experienced Local Guide Aiub Khan (01719368178) & Crew",
             "Island's Only Wooden Watch Tower",
-            "Pillows, Foam Mattress & Warm Blankets",
-            "All 4 Meals Included (Lunch, Evening Muri, BBQ Dinner, Breakfast)",
-            "3 Clean Low-Commode Washrooms",
-            "2 Tube-Wells for Sweet Drinking Water",
-            "3 Large Wooden Machangs (Lounging Decks)",
-            "40+ Quality Canvas Tents & 30+ Hammocks",
-            "Beach Chairs, Umbrellas & Wooden Beach Swings",
-            "Ukulele, Cajon, Hand Buoys & Acoustic Soundbox",
-            "Football & Volleyball on Sandbar",
-            "24/7 Dedicated 5-Person Island Crew",
-            "Nighttime Security Guard Patrol",
-            "Campfire & Acoustic Bonfire Area"
+            "Solar Electricity Facility (Off-Grid Eco Power)",
+            "3 Clean Low-Commode Washrooms & 2 Sweet Water Tube-Wells",
+            "3 Large Wooden Machangs, 40+ Tents & 30+ Hammocks",
+            "Beach Football, Volleyball, Swings & Acoustic Music",
+            "Campfire, BBQ Night & Stargazing",
+            "Nighttime Security Guard Patrol"
         ],
         "images": [
+            "/images/winter-ecotour-hero.jpg",
+            "/images/winter-ecotour-poster.jpg",
             "/images/char-heyar-watchtower.jpg",
             "/images/char-heyar-red-crabs.jpg",
-            "/images/char-heyar-tents.jpg",
-            "/images/char-heyar-campfire.jpg",
             "/images/seafood-bbq.jpg"
         ],
-        "rating": 4.95,
-        "review_count": 56,
+        "rating": 4.98,
+        "review_count": 68,
         "instant_book": True,
-        "host_name": "Camp Master Shumon & Island Crew",
+        "host_name": "Local Guide Aiub Khan & Island Crew",
         "host_phone": "+8801713880032",
-        "host_badge": "Verified Char Heyar Island Guardian",
-        "ghat_info": "Char Montaz / Koralia Ghat -> 45 mins local engine trawler / speedboat to Char Heyar sandbar"
+        "host_badge": "Verified Local Guide & Island Guardian",
+        "ghat_info": "Char Montaz Launch Ghat -> Char Tapushi -> Char Kusum -> Char Anda -> Shonar Char -> Char Hare (Trawler Included)"
     },
     {
         "title": "Manta Community Boat & Canal Living Experience",

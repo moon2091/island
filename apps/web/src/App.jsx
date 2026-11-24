@@ -208,12 +208,6 @@ export function App() {
               </div>
             </div>
 
-            {/* Category Filter Pills Bar */}
-            <CategoryPills
-              selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-            />
-
             {/* Flagship Winter Special Eco-Tour Spotlight */}
             <WinterEcoTour
               currency={currency}
@@ -235,99 +229,6 @@ export function App() {
                 });
               }}
             />
-
-            {/* Campsites Grid Section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-              
-              {/* Header with results count & filter status */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-nature-950">
-                    {showWishlistOnly
-                      ? 'Saved Wishlist Campsites'
-                      : selectedDestination !== 'All'
-                      ? `Campsites in ${selectedDestination}`
-                      : 'All Island Camping Experiences'}
-                  </h2>
-                  <p className="text-xs sm:text-sm text-stone-500 mt-0.5">
-                    {displayedCampsites.length} verified eco-camp
-                    {displayedCampsites.length === 1 ? '' : 's'} available
-                  </p>
-                </div>
-
-                {/* Reset / Wishlist toggles */}
-                <div className="flex items-center gap-2">
-                  {showWishlistOnly && (
-                    <button
-                      onClick={() => setShowWishlistOnly(false)}
-                      className="text-xs font-bold text-nature-800 bg-sand-200 hover:bg-sand-300 px-3.5 py-1.5 rounded-full transition-colors"
-                    >
-                      &larr; View all camps
-                    </button>
-                  )}
-
-                  {(selectedDestination !== 'All' || selectedCategory !== 'All Camps') && (
-                    <button
-                      onClick={() => {
-                        setSelectedDestination('All');
-                        setSelectedCategory('All Camps');
-                      }}
-                      className="text-xs font-bold text-campfire hover:text-campfire-hover transition-colors"
-                    >
-                      Clear filters
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* Listings Grid */}
-              {loading ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
-                    <div
-                      key={n}
-                      className="bg-white rounded-2xl h-80 animate-pulse border border-sand-300"
-                    />
-                  ))}
-                </div>
-              ) : displayedCampsites.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                  {displayedCampsites.map((campsite) => (
-                    <CampsiteCard
-                      key={campsite.id}
-                      campsite={campsite}
-                      currency={currency}
-                      isWishlisted={wishlist.includes(campsite.id)}
-                      onToggleWishlist={handleToggleWishlist}
-                      onClick={() => setActiveCampsite(campsite)}
-                    />
-                  ))}
-                </div>
-              ) : (
-                /* Empty State */
-                <div className="text-center py-16 bg-white rounded-3xl border border-sand-300 p-8 max-w-lg mx-auto">
-                  <div className="w-16 h-16 rounded-full bg-sand-200 text-stone-400 mx-auto flex items-center justify-center mb-4">
-                    <Compass className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-lg font-bold text-stone-900 mb-1">
-                    No island campsites match your filter
-                  </h3>
-                  <p className="text-xs text-stone-500 mb-6">
-                    Try clearing your destination or category filter to discover all coastal and lake camps across Bangladesh.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSelectedDestination('All');
-                      setSelectedCategory('All Camps');
-                      setShowWishlistOnly(false);
-                    }}
-                    className="px-5 py-2.5 bg-nature-900 text-white rounded-xl text-xs font-bold hover:bg-nature-800 transition-colors"
-                  >
-                    Reset All Filters
-                  </button>
-                </div>
-              )}
-            </section>
 
             {/* Featured Travel Experiences & Video Vlogs Section */}
             <div id="travel-vlogs">

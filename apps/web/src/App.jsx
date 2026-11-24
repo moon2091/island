@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { SearchBar } from './components/SearchBar';
-import { CategoryPills } from './components/CategoryPills';
-import { CampsiteCard } from './components/CampsiteCard';
 import { CampsiteDetail } from './components/CampsiteDetail';
 import { BookingModal } from './components/BookingModal';
 import { LogisticsGuide } from './components/LogisticsGuide';
@@ -13,7 +10,7 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { fetchCampsites, fetchDestinations } from './api/client';
 import { SEED_CAMPSITES } from './data/seedCampsites';
-import { Sparkles, MapPin, Compass, Flame, Filter, Heart } from 'lucide-react';
+import { Flame, MessageCircle, PhoneCall } from 'lucide-react';
 
 const STORAGE_WISHLIST_KEY = 'island_camping_wishlist';
 
@@ -185,20 +182,49 @@ export function App() {
                   শীতের বিশেষ অল-ইনক্লুসিভ ইকো-ট্যুর মাত্র ২,৫০০ টাকায়! চরমোন্তাজ লঞ্চঘাট থেকে ট্রলারে চরতাপুসী, চর কুসুম, চর আন্ডা ও সোনারচর হয়ে চর হেয়ারে প্রিমিয়াম তাঁবুতে রাত্রিযাপন, ৫ বেলার রাজকীয় খাবার ও বারবিকিউ নাইট।
                 </p>
 
-                {/* Floating Hipcamp Search Bar */}
-                <div className="mt-8 sm:mt-10">
-                  <SearchBar
-                    destinations={destinations}
-                    selectedDestination={selectedDestination}
-                    onSelectDestination={setSelectedDestination}
-                    checkInDate={checkInDate}
-                    onCheckInChange={setCheckInDate}
-                    checkOutDate={checkOutDate}
-                    onCheckOutChange={setCheckOutDate}
-                    guestsCount={guestsCount}
-                    onGuestsChange={setGuestsCount}
-                    onSearch={handleSearch}
-                  />
+                {/* Direct Hero CTAs */}
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <button
+                    onClick={() => {
+                      const charHareCamp =
+                        campsites.find((c) => c.slug === 'char-hare-mysterious-island') ||
+                        SEED_CAMPSITES[0];
+                      setBookingPayload({
+                        campsite: charHareCamp,
+                        packageType: 'all_inclusive',
+                        checkIn: checkInDate || new Date().toISOString().split('T')[0],
+                        checkOut:
+                          checkOutDate ||
+                          new Date(Date.now() + 86400000).toISOString().split('T')[0],
+                        guests: guestsCount || 2,
+                        nights: 1,
+                        selectedAddons: [],
+                        totalBdt: 2500 * (guestsCount || 2),
+                      });
+                    }}
+                    className="w-full sm:w-auto px-6 py-3.5 bg-campfire hover:bg-campfire-hover text-white rounded-full font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95"
+                  >
+                    <Flame className="w-4 h-4 fill-white" />
+                    <span>Book Winter Eco-Tour (৳2,500)</span>
+                  </button>
+
+                  <a
+                    href="https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20want%20to%20book%20the%20Winter%20Special%20Eco-Tour%20(Char%20Montaz%20-%20Shonar%20Char%20-%20Char%20Hare%2C%20%E0%A7%B32%2C500)."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-full font-black text-sm flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-emerald-950" />
+                    <span>WhatsApp: +8801713880032</span>
+                  </a>
+
+                  <a
+                    href="tel:+8801719368178"
+                    className="w-full sm:w-auto px-5 py-3.5 bg-white hover:bg-sand-200 text-nature-950 border border-sand-300 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+                  >
+                    <PhoneCall className="w-4 h-4 text-nature-800" />
+                    <span>Guide Aiub Khan: 01719368178</span>
+                  </a>
                 </div>
               </div>
 

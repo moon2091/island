@@ -179,7 +179,7 @@ export function WinterEcoTour({ currency = 'BDT', onBookTour }) {
           </div>
 
           {/* Right Column (1 span, sticky): Pricing, Inclusions, Packing Notice & Contacts */}
-          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
+          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-32">
             {/* Pricing & Booking Card */}
             <div className="bg-white rounded-3xl overflow-hidden border-2 border-nature-900 shadow-float">
               {/* Visual Creative Poster Strip */}

@@ -30,8 +30,36 @@ export function Navbar({
   return (
     <>
       <header className="sticky top-0 z-40 bg-sand-50/95 backdrop-blur-md border-b border-sand-300">
+        {/* Top Utility Contact Bar (Always visible on mobile & desktop) */}
+        <div className="bg-nature-950 text-sand-100 border-b border-nature-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-center sm:justify-between gap-x-4 gap-y-1 text-[11px] sm:text-xs font-semibold">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-[#25D366] hover:text-emerald-300 transition-colors whitespace-nowrap"
+              >
+                <MessageCircle className="w-3.5 h-3.5 fill-[#25D366] shrink-0" />
+                <span>WhatsApp Booking: +8801713880032</span>
+              </a>
+              <span className="hidden sm:inline text-nature-700">|</span>
+              <a
+                href="tel:+8801719368178"
+                className="inline-flex items-center gap-1.5 text-campfire-sunset hover:text-white transition-colors whitespace-nowrap"
+              >
+                <PhoneCall className="w-3.5 h-3.5 shrink-0" />
+                <span>Local Guide Aiub Khan: 01719368178</span>
+              </a>
+            </div>
+            <span className="hidden lg:inline text-sand-300 font-medium whitespace-nowrap">
+              শীতের বিশেষ ইকো-ট্যুর • Char Montaz → Shonar Char → Char Hare (৳2,500)
+            </span>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 gap-3 sm:gap-4">
+          <div className="flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-4">
             
             {/* 1. Left: Brand Logo (Always shrink-0 and clean single-line) */}
             <div

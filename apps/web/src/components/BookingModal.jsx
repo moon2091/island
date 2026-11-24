@@ -249,8 +249,8 @@ export function BookingModal({
                 )}
               </button>
 
-              {/* Direct WhatsApp Order Confirmation */}
-              <div className="text-center pt-1">
+              {/* Direct WhatsApp Order Confirmation & Google Form */}
+              <div className="space-y-2 pt-1">
                 <a
                   href={`https://wa.me/8801713880032?text=${encodeURIComponent(
                     `Hello Island Camping BD, I want to book/confirm order for ${campsite?.title} (${campsite?.destination?.name}) from ${checkIn} to ${checkOut} for ${guests} campers. Total: ${formatPrice(totalBdt)}. Name: ${guestName || 'Camper'}, Phone: ${guestPhone || 'Phone'}.`
@@ -260,7 +260,16 @@ export function BookingModal({
                   className="w-full py-2.5 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-emerald-950 border border-emerald-300 rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
-                  <span>Direct Book & Order Confirmation on WhatsApp (+8801713880032)</span>
+                  <span>Direct Book on WhatsApp (+8801713880032)</span>
+                </a>
+
+                <a
+                  href="https://docs.google.com/forms/d/1rwUnctOsoHo7V_w1xKUVQjiQDhT1NtknykiaZh5pOXA/viewform"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-2.5 bg-sand-200 hover:bg-sand-300 text-nature-950 border border-sand-400 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <span>Or Fill Out Official Google Booking Form &rarr;</span>
                 </a>
               </div>
             </form>
@@ -319,33 +328,47 @@ export function BookingModal({
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-sand-200 flex items-center justify-between text-[11px] text-stone-600">
-                <span>Official Booking Desk:</span>
-                <span className="font-mono font-bold text-emerald-800">WhatsApp: +8801713880032</span>
+              <div className="pt-2 border-t border-sand-200 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px] text-stone-600">
+                <span>Booking Desk: <strong className="text-emerald-800">+8801713880032</strong></span>
+                <span>Local Guide Aiub Khan: <strong className="text-nature-900">01719368178</strong></span>
               </div>
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="space-y-2.5">
+              <div className="flex flex-col sm:flex-row gap-2.5">
+                <a
+                  href={`https://wa.me/8801713880032?text=${encodeURIComponent(
+                    `Hi Island Camping BD, I just placed a booking for ${campsite?.title} with voucher code ${confirmedBooking?.booking_code || 'ISL-CONFIRMED'}. Dates: ${checkIn} to ${checkOut}, Guests: ${guests}, Total: ${formatPrice(totalBdt)}. Primary Camper: ${guestName} (${guestPhone}). Please confirm my order!`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4 fill-emerald-950" />
+                  <span>Confirm on WhatsApp (+8801713880032)</span>
+                </a>
+
+                <button
+                  onClick={handlePrintVoucher}
+                  className="py-3 px-4 bg-white border border-sand-400 hover:bg-sand-200 text-stone-800 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors"
+                >
+                  <Printer className="w-4 h-4" />
+                  <span>Print</span>
+                </button>
+              </div>
+
               <a
-                href={`https://wa.me/8801713880032?text=${encodeURIComponent(
-                  `Hi Island Camping BD, I just placed a booking for ${campsite?.title} with voucher code ${confirmedBooking?.booking_code || 'ISL-CONFIRMED'}. Dates: ${checkIn} to ${checkOut}, Guests: ${guests}, Total: ${formatPrice(totalBdt)}. Primary Camper: ${guestName} (${guestPhone}). Please confirm my order!`
+                href={`https://wa.me/8801719368178?text=${encodeURIComponent(
+                  `Assalamu Alaikum Aiub Bhai, I booked the Char Hare Winter Eco-Tour (${confirmedBooking?.booking_code || 'ISL-CONFIRMED'}). Name: ${guestName}, Phone: ${guestPhone}, Dates: ${checkIn} to ${checkOut}, Guests: ${guests}. Looking forward to meeting you at Char Montaz Ghat!`
                 )}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
+                className="w-full py-2.5 px-4 bg-nature-900 hover:bg-nature-800 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-emerald-950" />
-                <span>Confirm on WhatsApp (+8801713880032)</span>
+                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                <span>Message Local Guide Aiub Bhai on WhatsApp (01719368178)</span>
               </a>
-
-              <button
-                onClick={handlePrintVoucher}
-                className="py-3 px-4 bg-white border border-sand-400 hover:bg-sand-200 text-stone-800 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors"
-              >
-                <Printer className="w-4 h-4" />
-                <span>Print Voucher</span>
-              </button>
             </div>
 
             <button

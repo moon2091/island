@@ -149,16 +149,17 @@ export function Navbar({
 
             {/* 3. Right: Action Buttons Group (WhatsApp Desk + Currency + Wishlist + Hamburger) */}
             <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-              {/* Official WhatsApp Business Hotline (Compact & High Priority) */}
+              {/* Official WhatsApp Business Hotline (Compact on laptops, full on 2XL) */}
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="hidden md:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 font-black text-xs shadow-sm transition-all transform hover:scale-102 active:scale-95 whitespace-nowrap shrink-0"
+                className="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-emerald-950 font-black text-xs shadow-sm transition-all active:scale-95 whitespace-nowrap shrink-0"
                 title="Direct Booking on WhatsApp (+8801713880032)"
               >
                 <MessageCircle className="w-4 h-4 fill-emerald-950 shrink-0" />
-                <span>WhatsApp: +8801713880032</span>
+                <span className="2xl:hidden">WhatsApp</span>
+                <span className="hidden 2xl:inline">WhatsApp: +8801713880032</span>
               </a>
 
               {/* Currency Toggle */}

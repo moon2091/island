@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html,
   body {
     background-color: #FBF9F5;
     color: #1c1917;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }

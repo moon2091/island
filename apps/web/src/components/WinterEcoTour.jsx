@@ -32,51 +32,50 @@ export function WinterEcoTour({ currency = 'BDT', onBookTour }) {
       className="py-12 sm:py-16 bg-gradient-to-b from-sand-100 via-sand-50 to-sand-100 border-b border-sand-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Feature Banner */}
-        <div className="relative rounded-3xl overflow-hidden shadow-float border border-sand-300 mb-10 bg-nature-950">
-          <div className="relative h-64 sm:h-80 md:h-[380px] w-full">
-            <img
-              src="/images/winter-ecotour-hero.jpg"
-              alt={WINTER_ECO_TOUR.en_title}
-              className="w-full h-full object-cover opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-nature-950 via-nature-950/65 to-transparent" />
+        {/* Hero Feature Banner (Fluid height — never overlaps on 320px mobile or wide desktop) */}
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-float border border-sand-300 mb-8 sm:mb-10 bg-nature-950 min-h-[340px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-between p-5 sm:p-8">
+          {/* Background Image & Gradient */}
+          <img
+            src="/images/winter-ecotour-hero.jpg"
+            alt={WINTER_ECO_TOUR.en_title}
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-nature-950 via-nature-950/70 to-nature-950/30" />
 
-            {/* Top Badges */}
-            <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-campfire text-white text-xs font-extrabold uppercase tracking-wider shadow-lg">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{WINTER_ECO_TOUR.badge}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-nature-950 text-xs sm:text-sm font-black shadow-lg">
-                <span>অল-ইনক্লুসিভ: {formattedPrice} / প্রতি জন</span>
-              </span>
-            </div>
+          {/* Top Badges */}
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-campfire text-white text-[11px] sm:text-xs font-extrabold uppercase tracking-wider shadow-lg">
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span>{WINTER_ECO_TOUR.badge}</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-nature-950 text-xs sm:text-sm font-black shadow-lg">
+              <span>অল-ইনক্লুসিভ: {formattedPrice} / প্রতি জন</span>
+            </span>
+          </div>
 
-            {/* Bottom Title Overlay */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8">
-              <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight drop-shadow-md">
-                {WINTER_ECO_TOUR.title} 🏕️✨
-              </h2>
-              <p className="text-xs sm:text-sm text-sand-200 mt-1.5 font-medium">
-                {WINTER_ECO_TOUR.en_title} &bull; {WINTER_ECO_TOUR.duration}
-              </p>
+          {/* Bottom Title & Route Trail */}
+          <div className="relative z-10 mt-8 sm:mt-12">
+            <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug sm:leading-tight drop-shadow-md">
+              {WINTER_ECO_TOUR.title} 🏕️✨
+            </h1>
+            <p className="text-xs sm:text-sm text-sand-200 mt-1.5 font-medium">
+              {WINTER_ECO_TOUR.en_title} &bull; {WINTER_ECO_TOUR.duration}
+            </p>
 
-              {/* Route Trail Pills */}
-              <div className="mt-4 flex flex-wrap items-center gap-1.5 sm:gap-2">
-                {WINTER_ECO_TOUR.route_stops.map((stop, idx) => (
-                  <React.Fragment key={stop}>
-                    <span className="px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-bold">
-                      {stop}
+            {/* Route Trail Pills */}
+            <div className="mt-4 flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {WINTER_ECO_TOUR.route_stops.map((stop, idx) => (
+                <React.Fragment key={stop}>
+                  <span className="px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-bold">
+                    {stop}
+                  </span>
+                  {idx < WINTER_ECO_TOUR.route_stops.length - 1 && (
+                    <span className="text-campfire-sunset font-bold text-xs">
+                      &rarr;
                     </span>
-                    {idx < WINTER_ECO_TOUR.route_stops.length - 1 && (
-                      <span className="text-campfire-sunset font-bold text-xs">
-                        &rarr;
-                      </span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>

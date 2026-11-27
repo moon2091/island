@@ -182,7 +182,7 @@ export function App() {
               <TravelArticles />
             </div>
 
-            {/* Char Hare WhatsApp Community (QR + Link) & Facebook / Instagram Focus */}
+            {/* Char Hare WhatsApp Community (QR + Link) & Official Facebook Page */}
             <CommunitySocials />
           </div>
         )}

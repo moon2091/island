@@ -11,7 +11,6 @@ import {
   Youtube,
   Newspaper,
   Facebook,
-  Instagram,
   MessageCircle,
 } from 'lucide-react';
 
@@ -59,17 +58,6 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                   title="Follow on Facebook"
                 >
                   <Facebook className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="https://www.Instagram.com/islandcampingbangladesh"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram Profile"
-                  className="w-9 h-9 rounded-xl bg-nature-900 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-sand-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
-                  title="Follow on Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
                 </a>
 
                 <a
@@ -270,14 +258,6 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
               className="text-white hover:text-[#1877F2] font-bold transition-colors"
             >
               Facebook
-            </a>
-            <a
-              href="https://www.instagram.com/islandcampingbangladesh"
-              target="_blank"
-              rel="noreferrer"
-              className="text-white hover:text-[#dc2743] font-bold transition-colors"
-            >
-              Instagram
             </a>
             <a
               href="https://chat.whatsapp.com/KfL57wvJKvQBmF0V4LkP34?s=cl&p=i&iam=2"

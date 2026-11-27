@@ -235,6 +235,15 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
                 <MessageCircle className="w-3.5 h-3.5 fill-emerald-950" />
                 <span>Book / Query on WhatsApp</span>
               </a>
+
+              <a
+                href="https://chat.whatsapp.com/KfL57wvJKvQBmF0V4LkP34?s=cl&p=i&iam=2"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 border border-emerald-700/70 transition-colors"
+              >
+                <span>Join Char Hare WhatsApp Community &rarr;</span>
+              </a>
             </div>
 
             <p className="text-[11px] text-stone-400 pt-1">
@@ -245,38 +254,47 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
-          <div className="flex items-center gap-2">
-            <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh. Char Hare & Southern Islands Eco-Tourism.</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <span>&copy; {new Date().getFullYear()} Island Camping Bangladesh.</span>
+            <span className="text-stone-600">&bull;</span>
+            <span className="text-sand-200 font-semibold">
+              Developed by <span className="text-campfire font-extrabold">Bideshikart</span>
+            </span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-5">
             <a
               href="https://www.facebook.com/islandcampingbangladesh"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition-colors"
+              className="text-white hover:text-[#1877F2] font-bold transition-colors"
             >
               Facebook
             </a>
             <a
-              href="https://www.Instagram.com/islandcampingbangladesh"
+              href="https://www.instagram.com/islandcampingbangladesh"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition-colors"
+              className="text-white hover:text-[#dc2743] font-bold transition-colors"
             >
               Instagram
+            </a>
+            <a
+              href="https://chat.whatsapp.com/KfL57wvJKvQBmF0V4LkP34?s=cl&p=i&iam=2"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#25D366] hover:underline font-bold"
+            >
+              WhatsApp Community
             </a>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-[#25D366] hover:underline font-bold"
+              className="text-emerald-300 hover:underline font-semibold"
             >
-              WhatsApp: +8801713880032
+              +8801713880032
             </a>
-            <span className="text-emerald-400 font-semibold">
-              Hosted on Hostinger
-            </span>
           </div>
         </div>
       </div>

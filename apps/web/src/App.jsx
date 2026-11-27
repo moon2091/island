@@ -6,6 +6,7 @@ import { LogisticsGuide } from './components/LogisticsGuide';
 import { FeaturedVideos } from './components/FeaturedVideos';
 import { TravelArticles } from './components/TravelArticles';
 import { WinterEcoTour } from './components/WinterEcoTour';
+import { CommunitySocials } from './components/CommunitySocials';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { fetchCampsites, fetchDestinations } from './api/client';
@@ -180,6 +181,9 @@ export function App() {
             <div id="travel-guides">
               <TravelArticles />
             </div>
+
+            {/* Char Hare WhatsApp Community (QR + Link) & Facebook / Instagram Focus */}
+            <CommunitySocials />
           </div>
         )}
       </main>

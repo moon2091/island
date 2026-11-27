@@ -172,6 +172,9 @@ export function App() {
               onBookTour={handleOpenWinterBooking}
             />
 
+            {/* Char Hare WhatsApp Community (QR + Link) & Official Facebook Page */}
+            <CommunitySocials />
+
             {/* Featured Travel Experiences & Video Vlogs Section */}
             <div id="travel-vlogs">
               <FeaturedVideos />
@@ -181,9 +184,6 @@ export function App() {
             <div id="travel-guides">
               <TravelArticles />
             </div>
-
-            {/* Char Hare WhatsApp Community (QR + Link) & Official Facebook Page */}
-            <CommunitySocials />
           </div>
         )}
       </main>

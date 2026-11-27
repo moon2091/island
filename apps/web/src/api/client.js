@@ -1,13 +1,20 @@
 import { SEED_CAMPSITES, DESTINATIONS } from '../data/seedCampsites';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
-// Helper to check if backend is online with quick timeout
+// Helper to check if backend is online with quick timeout (only when explicitly configured or on localhost)
 async function isBackendOnline() {
+  const isLocal =
+    typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  if (!API_BASE_URL && !isLocal) {
+    return false;
+  }
+  const baseUrl = API_BASE_URL || 'http://localhost:8000/api';
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 1200);
-    const res = await fetch(`${API_BASE_URL.replace('/api', '')}/health`, {
+    const res = await fetch(`${baseUrl.replace('/api', '')}/health`, {
       signal: controller.signal
     });
     clearTimeout(timeoutId);

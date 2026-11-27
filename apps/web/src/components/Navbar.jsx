@@ -16,8 +16,7 @@ import {
 export function Navbar({
   currency,
   onToggleCurrency,
-  wishlistCount,
-  onOpenWishlist,
+  onBookNow,
   onNavigateHome,
   onOpenLogistics,
 }) {
@@ -171,18 +170,13 @@ export function Navbar({
                 {currency === 'BDT' ? '🇧🇩 BDT' : '🌐 USD'}
               </button>
 
-              {/* Wishlist Button */}
+              {/* Direct Book Now CTA (Replaces unused Wishlist button) */}
               <button
-                onClick={onOpenWishlist}
-                className="relative p-2.5 rounded-full text-stone-700 hover:text-campfire hover:bg-sand-200 transition-colors shrink-0"
-                title="Saved campsites"
+                onClick={onBookNow}
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-campfire hover:bg-campfire-hover text-white font-extrabold text-xs shadow-sm transition-all active:scale-95 whitespace-nowrap shrink-0"
               >
-                <Heart className="w-5 h-5" />
-                {wishlistCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-campfire text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-sand-50 animate-pulse">
-                    {wishlistCount}
-                  </span>
-                )}
+                <Flame className="w-3.5 h-3.5 fill-white shrink-0" />
+                <span>Book Now</span>
               </button>
 
               {/* Mobile / Tablet Menu Button (Visible below XL screens) */}
@@ -316,8 +310,14 @@ export function Navbar({
 
       {/* Host a Camp Modal */}
       {hostModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-sand-50 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-sand-300 relative animate-in fade-in zoom-in-95 duration-200">
+        <div
+          onClick={() => setHostModalOpen(false)}
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-sand-50 rounded-2xl max-w-lg w-full max-h-[88vh] overflow-y-auto p-5 sm:p-8 shadow-2xl border border-sand-300 relative animate-in fade-in zoom-in-95 duration-200"
+          >
             <button
               onClick={() => setHostModalOpen(false)}
               className="absolute top-5 right-5 text-stone-400 hover:text-stone-700 p-1 rounded-full hover:bg-sand-200"

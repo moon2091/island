@@ -122,8 +122,14 @@ export function FeaturedVideos() {
 
       {/* Video Lightbox Modal */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-stone-950 rounded-2xl overflow-hidden shadow-2xl border border-stone-800 animate-in fade-in zoom-in-95 duration-200">
+        <div
+          onClick={() => setActiveVideo(null)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-stone-950 rounded-2xl shadow-2xl border border-stone-800 animate-in fade-in zoom-in-95 duration-200"
+          >
             
             {/* Modal Header */}
             <div className="p-4 sm:p-5 flex items-center justify-between border-b border-stone-800 bg-stone-900">

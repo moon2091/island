@@ -45,7 +45,7 @@ export function App() {
   const [bookingPayload, setBookingPayload] = useState(null);
   const [showLogistics, setShowLogistics] = useState(false);
 
-  // Load initial data
+  // Load initial data once
   useEffect(() => {
     async function loadData() {
       setLoading(true);
@@ -64,29 +64,6 @@ export function App() {
     }
     loadData();
   }, []);
-
-  // Filter campsites on state change
-  const handleSearch = async () => {
-    setLoading(true);
-    try {
-      const results = await fetchCampsites({
-        destination: selectedDestination,
-        category: selectedCategory,
-        guests: guestsCount,
-        search: searchQuery,
-      });
-      setCampsites(results || []);
-    } catch (err) {
-      console.error('Search failed:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Re-run search when destination or category changes
-  useEffect(() => {
-    handleSearch();
-  }, [selectedDestination, selectedCategory]);
 
   // Wishlist toggle handler
   const handleToggleWishlist = (campsiteId) => {
@@ -114,11 +91,49 @@ export function App() {
     setShowWishlistOnly(false);
     setSelectedDestination('All');
     setSelectedCategory('All Camps');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const displayedCampsites = showWishlistOnly
-    ? campsites.filter((c) => wishlist.includes(c.id))
-    : campsites;
+  const handleOpenWinterBooking = () => {
+    const charHareCamp =
+      campsites.find((c) => c.slug === 'char-hare-mysterious-island') ||
+      SEED_CAMPSITES[0];
+    setBookingPayload({
+      campsite: charHareCamp,
+      packageType: 'all_inclusive',
+      checkIn: checkInDate || new Date(Date.now() + 86400000).toISOString().split('T')[0],
+      checkOut:
+        checkOutDate ||
+        new Date(Date.now() + 172800000).toISOString().split('T')[0],
+      guests: guestsCount || 2,
+      nights: 1,
+      selectedAddons: [],
+      totalBdt: 2500 * (guestsCount || 2),
+    });
+  };
+
+  const handleSelectFooterDestination = (destName) => {
+    if (destName === 'Char Hare' || destName === 'Char Heyar') {
+      setActiveCampsite(null);
+      setTimeout(() => {
+        const el = document.getElementById('winter-eco-tour');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
+      return;
+    }
+    const pool = campsites.length ? campsites : SEED_CAMPSITES;
+    const match = pool.find(
+      (c) =>
+        c.destination?.name?.toLowerCase() === destName.toLowerCase() ||
+        c.title?.toLowerCase().includes(destName.toLowerCase())
+    );
+    if (match) {
+      setActiveCampsite(match);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      handleNavigateHome();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-sand-100 flex flex-col selection:bg-nature-200 selection:text-nature-900">
@@ -127,11 +142,7 @@ export function App() {
       <Navbar
         currency={currency}
         onToggleCurrency={handleToggleCurrency}
-        wishlistCount={wishlist.length}
-        onOpenWishlist={() => {
-          setActiveCampsite(null);
-          setShowWishlistOnly(true);
-        }}
+        onBookNow={handleOpenWinterBooking}
         onNavigateHome={handleNavigateHome}
         onOpenLogistics={() => setShowLogistics(true)}
       />
@@ -157,23 +168,7 @@ export function App() {
             {/* Flagship Winter Special Eco-Tour Spotlight */}
             <WinterEcoTour
               currency={currency}
-              onBookTour={() => {
-                const charHareCamp =
-                  campsites.find((c) => c.slug === 'char-hare-mysterious-island') ||
-                  SEED_CAMPSITES[0];
-                setBookingPayload({
-                  campsite: charHareCamp,
-                  packageType: 'all_inclusive',
-                  checkIn: checkInDate || new Date().toISOString().split('T')[0],
-                  checkOut:
-                    checkOutDate ||
-                    new Date(Date.now() + 86400000).toISOString().split('T')[0],
-                  guests: guestsCount || 2,
-                  nights: 1,
-                  selectedAddons: [],
-                  totalBdt: 2500 * (guestsCount || 2),
-                });
-              }}
+              onBookTour={handleOpenWinterBooking}
             />
 
             {/* Featured Travel Experiences & Video Vlogs Section */}
@@ -206,11 +201,7 @@ export function App() {
       {/* Footer */}
       <Footer
         onOpenLogistics={() => setShowLogistics(true)}
-        onSelectDestination={(dest) => {
-          setSelectedDestination(dest);
-          setActiveCampsite(null);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onSelectDestination={handleSelectFooterDestination}
       />
 
       {/* Global 24/7 WhatsApp Business Booking Desk */}

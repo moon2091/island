@@ -20,7 +20,7 @@ export function Footer({ onOpenLogistics, onSelectDestination }) {
     'https://wa.me/8801713880032?text=Hello%20Island%20Camping%20BD%2C%20I%20want%20to%20inquire%20about%20Char%20Hare%20and%20southern%20island%20camps%20(Booking%20%26%20Queries)';
 
   return (
-    <footer className="bg-nature-950 text-sand-200 pt-16 pb-12 border-t border-nature-900">
+    <footer className="bg-nature-950 text-sand-200 pt-16 pb-24 sm:pb-12 border-t border-nature-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}
